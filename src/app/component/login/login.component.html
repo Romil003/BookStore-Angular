@@ -1,5 +1,5 @@
-<div class="big-container">
-    <div class="container">
+<div class="big-container" [ngStyle]="backgroundChange ? {'background-color': '#707070'} : {'background-color': '#878787'}">
+    <div class="container" >
         <div class="container-1">
             <img src="../../../assets/img-1.png">
             <span class="text-1">ONLINE BOOK SHOPPING</span>
@@ -7,8 +7,8 @@
     </div>
     <mat-card class="card-container">
         <mat-card-content>
-            <mat-tab-group animationDuration="0ms">
-                <mat-tab label="LOGIN">
+            <mat-tab-group animationDuration="0ms" (click)="onBGChange()">
+                <mat-tab label="LOGIN" >
                     <form [formGroup]="loginForm">
                         <div class="form-class">
                             <div class="log-in-container">
@@ -19,10 +19,20 @@
                                 <mat-form-field appearance="outline">
                                     <mat-label>Password</mat-label>
                                     <input matInput type="password" formControlName="password" placeholder="password">
-                                    <mat-icon matSuffix class="suffix-img"><img src="../../../assets/visibility_black_24dp.svg"></mat-icon>
-                                    <mat-hint class="arrange-hint"><button mat-button color="primary" class="password-hint-button">Forgot password ?</button></mat-hint>
+                                    <mat-icon matSuffix class="suffix-img"><img
+                                            src="../../../assets/visibility_black_24dp.svg"></mat-icon>
+                                    <mat-hint class="arrange-hint"><button mat-button color="primary"
+                                            class="password-hint-button">Forgot password ?</button></mat-hint>
                                 </mat-form-field>
-                                <button mat-raised-button  class="Log-in-button">Login</button>
+                                <!-- <div>
+                                    <label for="email">Email</label>
+                                    <input id="email" type="email" formControlName="email" placeholder="Email">
+                                </div>
+                                <div>
+                                    <label for="password">Password</label>
+                                    <input id="password" type="password" formControlName="password" placeholder="password">
+                                </div> -->
+                                <button mat-raised-button class="Log-in-button" (click)="logIn()">Login</button>
                                 <div class="or-class">
                                     <div class="line"><mat-divider></mat-divider></div>
                                     <div class="text-3">OR</div>
@@ -36,7 +46,49 @@
                         </div>
                     </form>
                 </mat-tab>
-                <mat-tab label="SIGN UP" class="text-2">SIGN UP</mat-tab>
+                <mat-tab label="SIGN UP" class="text-2" >
+                    <form [formGroup]="signupForm">
+                        <div class="form-class">
+                            <div class="log-in-container-1">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Full Name</mat-label>
+                                    <input matInput type="text" formControlName="fullname" placeholder="Name">
+                                </mat-form-field>
+                                <!-- <div>
+                                    <label for="name">Name</label>
+                                    <input id="name" type="text" formControlName="fullName" placeholder="Enter your name">
+                                </div> -->
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput type="email" formControlName="Email" placeholder="Email">
+                                </mat-form-field>
+                                <!-- <div>
+                                    <label for="email">Email</label>
+                                    <input id="email" type="email" formControlName="email" placeholder="Email">
+                                </div>
+                                <div>
+                                    <label for="password">Password</label>
+                                    <input id="password" type="password" formControlName="password" placeholder="password">
+                                </div> -->
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Password</mat-label>
+                                    <input matInput type="password" formControlName="passWord" placeholder="password">
+                                    <mat-icon matSuffix class="suffix-img"><img
+                                            src="../../../assets/visibility_black_24dp.svg"></mat-icon>
+                                </mat-form-field>
+                                <!-- <div>
+                                    <label for="mobileNumber">Mobile Number</label>
+                                    <input id="mobileNumber" formControlName="mobileNumber" placeholder="Mobile number">
+                                </div> -->
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Mobile Number</mat-label>
+                                    <input matInput formControlName="mobilenumber" placeholder="Mobile number">
+                                </mat-form-field>
+                                <button mat-raised-button class="Log-in-button" (click)="signUp()">Signup</button>
+                            </div>
+                        </div>
+                    </form>
+                </mat-tab>
             </mat-tab-group>
         </mat-card-content>
     </mat-card>

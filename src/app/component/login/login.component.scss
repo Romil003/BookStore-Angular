@@ -3,7 +3,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: lightgrey;
+    // background-color: #000000;
+    // opacity: 0.31;
     width: 100%;
     height: 100%;
 }
@@ -102,7 +103,7 @@
 
 ::ng-deep .mat-mdc-text-field-wrapper {
     width: 252px !important;
-
+    height: 40px !important;
 }
 
 .arrange-hint {
@@ -145,6 +146,8 @@
 }
 
 .suffix-img img {
+    margin-bottom: 15px;
+    margin-right: 10px;
     opacity: 0.54;
 }
 
@@ -199,4 +202,42 @@
     border-radius: 3px;
     color: #0d0d0d;
     border: thin;
+}
+
+.log-in-container-1 {
+    width: 252px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 1px;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+    padding-top: 9px;
+    padding-bottom: 16px;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+     top: 20px; 
+}
+
+// label,input{
+//     display: block;
+// }
+
+// input{
+//     width: 246px;
+//     height: 35px;
+// }
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline {
+    border-color: #A03037;
+    width: 22px;
+    
+}
+
+::ng-deep .mdc-tab-indicator .mdc-tab-indicator__content--underline {
+    border-top-width: 5px !important;
 }
