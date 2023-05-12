@@ -1,0 +1,26 @@
+<div class="ManyCards">
+    <mat-card class="card-container" *ngFor="let book of getBooksArray | searching : gettingArray | sorting:gettingArray ">
+        <div class="img-container">
+            <img src="../../../assets/Image 11.png">
+        </div>
+        <div class="text-1-container">
+            <span class="text-1">{{book.bookName}}</span>
+        </div>
+        <div class="text-2-container">
+            <span class="text-2">{{book.author}}</span>
+        </div>
+        <div class="card-mini-container">
+            <div class="rating">
+                <span class="rating-1">4.5</span>
+                <img src="../../../assets/star_white_18dp.svg" height="11px" width="11px">
+            </div>
+            <div class="rating-count">
+                <span>({{book.quantity}})</span>
+            </div>
+        </div>
+        <div class="price-continer">
+            <span class="discounted-price">Rs.{{book.discountPrice}}</span>
+            <span class="actual-price">Rs.{{book.price}}</span>
+        </div>
+    </mat-card>
+</div>

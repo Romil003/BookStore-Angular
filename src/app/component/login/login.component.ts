@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/Service/UserService/user.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,9 +14,12 @@ export class LoginComponent implements OnInit {
   loginForm! : FormGroup
   signupForm! : FormGroup
   backgroundChange : boolean = false
-  // opacityForBackground = 0.61
+  token : any
 
-  constructor(private formbuilder : FormBuilder,private userService : UserService, private snackbar : MatSnackBar){}
+  constructor(private formbuilder : FormBuilder,
+    private userService : UserService, 
+    private snackbar : MatSnackBar,
+    private route : Router){}
 
   ngOnInit(){
     this.loginForm = this.formbuilder.group({
@@ -47,6 +51,9 @@ export class LoginComponent implements OnInit {
         this.snackbar.open("Log-in successfully","",{
           duration : 2000
         })
+         localStorage.setItem('token',result.accessToken);
+         this.route.navigateByUrl('/dashboard');
+        
         
       })
     } else {

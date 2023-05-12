@@ -1,0 +1,17 @@
+<div class="main-header">
+    <div class="header-2">
+        <div>
+            <span class="text-5">Books</span>
+            <span class="text-6">({{bookArray.length}} items)</span>
+        </div>
+        <div>
+            <select  class="sorting" (click)="sorting($event)">
+                <option value="">Sort by relevance</option>
+                <option value ="lowtohigh" >Price : Low To High</option>
+                <option value ="hightolow" >Price : High To Low</option>
+                <option value ="newArrivals" >Newest Arrivals</option>
+            </select>
+        </div>
+    </div>
+    <app-display-books [getBooksArray]="bookArray"></app-display-books>
+</div>

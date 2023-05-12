@@ -14,4 +14,10 @@ export class HttpServiceService {
     console.log("posting from http searvice =>");
     return this.httpClient.post(this.baseUrl+url,reqPayload,token && httpAuthOptions);
   }
+
+  getService(url:string,token:boolean,httpAuthOptions :any){
+    console.log("gettong data from http service");
+    return this.httpClient.get(this.baseUrl + url,token && httpAuthOptions);
+    
+  }
 }

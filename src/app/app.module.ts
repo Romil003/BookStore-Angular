@@ -13,11 +13,25 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { GetAllBooksComponent } from './component/get-all-books/get-all-books.component';
+import { DisplayBooksComponent } from './component/display-books/display-books.component';
+import { AuthguardService } from './Service/AuthguardService/authguard.service';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import { SearchingPipe } from './Pipe/searchPipe/searching.pipe';
+import { SortingPipe } from './Pipe/sortingPipe/sorting.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    GetAllBooksComponent,
+    DisplayBooksComponent,
+    SearchingPipe,
+    SortingPipe
   ],
   imports: [
     BrowserModule,
@@ -31,9 +45,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatInputModule,
     MatDividerModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule
   ],
-  providers: [],
+  providers: [
+    AuthguardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

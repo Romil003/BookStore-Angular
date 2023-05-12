@@ -1,0 +1,37 @@
+.main-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-2 {
+    padding-top: 23px;
+    display: flex;
+    width: 1015px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.text-5 {
+    font-size: 25px;
+    line-height: 33px;
+    font-weight: 500;
+}
+
+.text-6 {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 200;
+}
+
+.sorting {
+    height: 30px;
+    width: 160px;
+/* UI Properties */
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #E2E2E2;
+border-radius: 1px;
+opacity: 1;
+}
