@@ -20,13 +20,6 @@ export class GetAllBooksComponent implements OnInit {
 
 
   ngOnInit(){
-    // if(this.givenValue == this.lowtohigh){
-    //   this.lowToHighPricing();
-    // } else if(this.givenValue == this.hightolow){
-    //   this.highToLowPricing();
-    // } else if(this.givenValue == this.newArrivals){
-    //   this.newArriving();
-    // }
 
     this.gettingAllBooks();
       
@@ -44,28 +37,8 @@ export class GetAllBooksComponent implements OnInit {
   }
 
   sorting(event : any){
-    
-    // this.sortedArray=this.bookArray.sort((a : any,b:any) => a.discountPrice - b.discountPrice);
-    // console.log(this.sortedArray);
-    // this.bookArray = this.sortedArray;
-    // return this.bookArray;
-    this.datService.sendingValue(event.target.value);
-
+    this.datService.sendingSortedValue(event.target.value);
   }
 
-  // highToLowPricing(event : any){
-  
-  // //  this.bookArray.sort((a : any,b:any) => b.discountPrice - a.discountPrice);
-  // //   this.bookArray = this.sortedArray;
-  // //   return this.bookArray;
-  // this.datService.sendingValue(event.target.value);
-  // }
-
-  // newArriving(event : any){
-  //   this.datService.sendingValue(event.target.value);
-  //   // this.bookArray.sort((a : any,b:any) => a.updatedAt - b.updatedAt);
-  //   // this.bookArray = this.sortedArray;
-  //   // return this.bookArray;
-  // }
 
 }

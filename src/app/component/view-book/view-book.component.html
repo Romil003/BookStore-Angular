@@ -1,0 +1,98 @@
+<div class="main-container">
+    <div class="container-1">
+        <span class="text-1" (click)="goToHome()">Home </span>
+        <span>/</span>
+        <span class="text-2"> Book (01)</span>
+    </div>
+    <div class="book-container">
+        <div class="book-front-back">
+            <div class="book-front">
+                <img src="../../../assets/Image 1.png" class="img-size">
+            </div>
+            <div class="book-front">
+                <img src="../../../assets/Image 46.png" class="img-size">
+            </div>
+        </div>
+        <div class="img-with-button">
+            <div class="book-img">
+                <img src="../../../assets/Image 11@2x.png" >
+            </div>
+            <div class="button-class">
+                <button class="button-1">ADD TO BAG</button>
+                <button class="button-2"><img src="../../../assets/favorite_white_18dp.svg"> WHISHLIST</button>
+            </div>
+        </div>
+        <div class="book-details">
+            <span class="book-name">{{getBookData.bookName}}</span>
+            <span class="book-author">{{getBookData.author}}</span>
+            <div class="rating-quantity">
+                <div class="rating">
+                    <span class="rating-number">4.5</span>
+                    <img src="../../../assets/star_white_18dp.svg">
+                </div>
+                <span class="quantity">({{getBookData.quantity}})</span>
+            </div>
+            <div class="price-class">
+                <span class="discounted-price">Rs.{{getBookData.discountPrice}}</span>
+                <span class="actual-price">Rs.{{getBookData.price}}</span>
+            </div>
+            <mat-divider class="divider-class"></mat-divider>
+            <div class="description-class">
+                <li class="desc-1">Book Details</li>
+                <p class="content-class">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus estundefined</p>
+            </div>
+            <mat-divider class="divider-class"></mat-divider>
+            <span class="feedback">Customer Feedback</span>
+            <div class="overall-rating-class">
+                <span class="overall-text">Overall rating</span>
+                <div class="stars">
+                    <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                    <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                    <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                    <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                    <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                </div>
+                <input type="text" placeholder="Write your preview" class="comment-input">
+                <!-- <textarea class="comment-input">Write your preview</textarea> -->
+                <button class="submitting">Submit</button>
+            </div>
+            <div class="previews">
+                <div class="name-review">
+                    <div class="symbol">AC</div>
+                    <span>Aniket Chile</span>
+                </div>
+                <div class="star-class">
+                    <div class="stars">
+                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                    </div>
+                </div>
+                <div class="comment-sect">
+                    <p class="content-class-2">Good product. Even though the translation could have been better, Chanakya's neeti are thought provoking. Chanakya has written on many different topics and his writings are succinct.</p>
+                </div>
+            </div>
+            <div class="previews-2">
+                <div class="name-review">
+                    <div class="symbol">SB</div>
+                    <span>Shweta Bodkar</span>
+                </div>
+                <div class="star-class">
+                    <div class="stars">
+                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                    </div>
+                </div>
+                <div class="comment-sect">
+                    <p class="content-class-2">Good product. Even though the translation could have been better, Chanakya's neeti are thought provoking. Chanakya has written on many different topics and his writings are succinct.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

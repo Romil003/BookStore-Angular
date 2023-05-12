@@ -22,6 +22,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import { SearchingPipe } from './Pipe/searchPipe/searching.pipe';
 import { SortingPipe } from './Pipe/sortingPipe/sorting.pipe';
+import { ViewBookComponent } from './component/view-book/view-book.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SortingPipe } from './Pipe/sortingPipe/sorting.pipe';
     GetAllBooksComponent,
     DisplayBooksComponent,
     SearchingPipe,
-    SortingPipe
+    SortingPipe,
+    ViewBookComponent
   ],
   imports: [
     BrowserModule,

@@ -14,4 +14,11 @@ export class DataService {
   sendingValue(msg : any){
     this.mainSource.next(msg);
   }
+
+  private mainSource2 = new BehaviorSubject([]);
+  currentSource2 = this.mainSource2.asObservable();
+
+  sendingSortedValue(msg : any){
+    this.mainSource2.next(msg);
+  }
 }

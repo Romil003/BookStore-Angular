@@ -1,7 +1,7 @@
 <div class="ManyCards">
-    <mat-card class="card-container" *ngFor="let book of getBooksArray | searching : gettingArray | sorting:gettingArray ">
+    <mat-card class="card-container" *ngFor="let book of getBooksArray | searching : gettingArray | sorting:sortingOfBooks " >
         <div class="img-container">
-            <img src="../../../assets/Image 11.png">
+            <img src="../../../assets/Image 11.png" (click)="goToQuickView(book)">
         </div>
         <div class="text-1-container">
             <span class="text-1">{{book.bookName}}</span>
