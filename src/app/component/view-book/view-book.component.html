@@ -1,6 +1,6 @@
 <div class="main-container">
     <div class="container-1">
-        <span class="text-1" (click)="goToHome()">Home </span>
+        <span class="text-1" routerLink="/dashboard">Home </span>
         <span>/</span>
         <span class="text-2"> Book (01)</span>
     </div>
@@ -18,7 +18,15 @@
                 <img src="../../../assets/Image 11@2x.png" >
             </div>
             <div class="button-class">
-                <button class="button-1">ADD TO BAG</button>
+                <div *ngIf="addCart">
+                    <button class="button-1" (click)="addTocart()" >ADD TO BAG</button>
+                </div>
+                <div *ngIf="!addCart" class="inc-dec">
+                    <button (click)="dec()" [disabled]="count === 1">-</button>
+                    <div class="showCount">{{count}}</div>
+                    <button (click)="inc()">+</button>
+                </div>
+                
                 <button class="button-2"><img src="../../../assets/favorite_white_18dp.svg"> WHISHLIST</button>
             </div>
         </div>
@@ -63,9 +71,9 @@
                 </div>
                 <div class="star-class">
                     <div class="stars">
-                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
-                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
-                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                        <img src="../../../assets/filled-star.png" class="star-size-1">
+                        <img src="../../../assets/filled-star.png" class="star-size-1">
+                        <img src="../../../assets/filled-star.png" class="star-size-1">
                         <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
                         <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
                     </div>
@@ -81,9 +89,9 @@
                 </div>
                 <div class="star-class">
                     <div class="stars">
-                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
-                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
-                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                        <img src="../../../assets/filled-star.png" class="star-size-1">
+                        <img src="../../../assets/filled-star.png" class="star-size-1">
+                        <img src="../../../assets/filled-star.png" class="star-size-1">
                         <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
                         <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
                     </div>

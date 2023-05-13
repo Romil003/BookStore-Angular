@@ -351,7 +351,15 @@
     width: 20px;
     height: 19px;
     opacity: 1;
+    
 }
+
+.star-size-1 {
+    width: 18px;
+    height: 15px;
+}
+
+
 
 .comment-input {
     width: 527px;
@@ -456,4 +464,44 @@
     align-items: flex-start;
     justify-content: flex-start;
     row-gap: 5px;
+}
+
+.inc-dec {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 9px;
+}
+
+.inc-dec button {
+    width: 38px;
+height: 38px;
+/* UI Properties */
+background: #FAFAFA 0% 0% no-repeat padding-box;
+border: 1px solid #DBDBDB;
+border-radius: 50%;
+font-size: 15px;
+line-height: 20px;
+opacity: 1;
+}
+
+.showCount {
+    width: 66px;
+    height: 38px;
+/* UI Properties */
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #DBDBDB;
+padding-top: 10px;
+text-align: center;
+border-radius: 2px;
+opacity: 1;
+font-size: 22px;
+line-height: 27px;
+font-style: medium;
+font-family: Lato;
+font-weight: normal;
+font-variant: normal;
+letter-spacing: 0px;
+color: #333232;
 }
