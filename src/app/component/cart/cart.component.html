@@ -1,0 +1,157 @@
+<div class="main-container">
+    <div class="mini-container">
+        <div class="container-1">
+            <span class="text-1" routerLink="/dashboard">Home </span>
+            <span>/</span>
+            <span class="text-2"> My Cart</span>
+        </div>
+        <div class="container-2">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="expand1"  class="main-accordion" hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="title-name">
+                            My cart (1)
+                        </mat-panel-title>
+                        <mat-panel-description class="title-seperator">
+                            <select class="location-selector">
+                                <option class="location-text">
+                                    <mat-icon><img src="../../../assets/location-img-1.jpg"></mat-icon>
+                                    Bridgelabz Solutions LLP,No...
+                                </option>
+                            </select>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <div class="book-with-inc-dec">
+                        <div class="book-details">
+                            <div>
+                                <img src="../../../assets/Image 11.png" height="85px" width="65px">
+                            </div>
+                            <div class="book-info">
+                                <span class="book-name">Don't Make Me Think</span>
+                                <span class="book-author">by Steve Krug</span>
+                                <div class="price-info">
+                                    <span class="disc-price">Rs.1500</span>
+                                    <span class="act-price">Rs.2000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="show-inc-dec">
+                            <div class="inc-dec">-</div>
+                            <div class="showCount">1</div>
+                            <div class="inc-dec">+</div>
+                            <span class="remove-book">Remove</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button mat-button (click)="toOpenPanel2()"  class="place-button">PLACE ORDER</button>
+                    </div>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel [expanded]="expandPanel2"  class="main-accordion" hideToggle>
+                    <mat-expansion-panel-header *ngIf="showContent">
+                        <mat-panel-title>
+                            Customer Details
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            <button mat-button class="add-address-button">Add new Address</button>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <mat-expansion-panel-header *ngIf="!showContent">
+                        <mat-panel-title>
+                            Address Details
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <div class="main-address-content">
+                        <div class="name-mobile">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Full Name</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Mobile number</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="button-alignment">
+                            <div class="work-content">
+                                <div>
+                                    <mat-radio-button value="work"></mat-radio-button>
+                                </div>
+                                <div class="main-work-content">
+                                    <div class="work-header">
+                                        <span>1.WORK</span>
+                                        <button class="work-address-edit">Edit</button>
+                                    </div>
+                                    <div class="work-address">
+                                        <div class="address-given">
+                                            <label>Address</label>
+                                            <input type="text" style="width: 512px; height: 82px;">
+                                        </div>
+                                        <div class="city-state">
+                                            <div class="address-given">
+                                                <label>city/town</label>
+                                                <input type="text" style="width: 248px; height: 45px;">
+                                            </div>
+                                            <div class="address-given">
+                                                <label>state</label>
+                                                <input type="text" style="width: 248px; height: 45px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="work-content">
+                                <div>
+                                    <mat-radio-button value="home"></mat-radio-button>
+                                </div>
+                                <div class="main-work-content">
+                                    <div class="work-header">
+                                        <span>2.HOME</span>
+                                        <button class="work-address-edit">Edit</button>
+                                    </div>
+                                    <div class="work-address">
+                                        <div class="address-given">
+                                            <label>Address</label>
+                                            <input type="text" style="width: 512px; height: 82px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button mat-button (click)="toOpenPanel3()"  class="details-confirm-button">CONTINUE</button>
+                    </div>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel [expanded]="expandPanel3"  class="main-accordion" hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Order summery
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="book-with-inc-dec">
+                        <div class="book-details">
+                            <div>
+                                <img src="../../../assets/Image 11.png" height="85px" width="65px">
+                            </div>
+                            <div class="book-info">
+                                <span class="book-name">Don't Make Me Think</span>
+                                <span class="book-author">by Steve Krug</span>
+                                <div class="price-info">
+                                    <span class="disc-price">Rs.1500</span>
+                                    <span class="act-price">Rs.2000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button mat-button routerLink="orderPlace"  class="place-button">CHECKOUT</button>
+                    </div>
+                </mat-expansion-panel>
+
+            </mat-accordion>
+        </div>
+    </div>
+</div>

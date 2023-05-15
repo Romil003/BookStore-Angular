@@ -370,6 +370,16 @@
     border: none;
     outline: none;
     opacity: 1;
+    display: flex;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.comment-input input {
+    width: 250px;
+    height: 20px;
+    border: none;
+    outline: none;
 }
 
 .submitting {

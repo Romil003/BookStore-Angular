@@ -1,0 +1,400 @@
+.main-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.mini-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 170px;
+    margin-top: 40px;
+}
+
+.container-1 {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+    align-items: center;
+    margin-bottom: 37px;
+}
+
+.text-1 {
+
+    font-size: 12px;
+    line-height: 16px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.text-2 {
+    font-size: 12px;
+    line-height: 16px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: black;
+    opacity: 1;
+}
+
+.main-accordion {
+    width: 774px;
+    
+}
+
+::ng-deep .mat-expansion-panel {
+    box-shadow: none !important;
+    
+    border: 1px solid #707070;
+    border-radius: 1px !important;
+}
+
+.title-name {
+    font-size: 18px;
+    line-height: 22px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: medium;
+    font-variant: normal;
+letter-spacing: 0px;
+color: #0A0102;
+opacity: 1;
+}
+
+.title-seperator {
+    margin-left: 301px;
+
+}
+
+.location-selector {
+    width: 275px;
+    height: 40px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #DCDCDC;
+    border-radius: 1px;
+    opacity: 1;
+    outline: none;
+}
+
+.location-text {
+    font-size: 14px;
+    line-height: 17px;
+    font-family: Roboto;
+    font-variant: normal;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.location-img {
+    width: 14px;
+    height: 20px;
+    /* UI Properties */
+    background: #A03037 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.book-details {
+    width: 236px;
+    height: 89px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 38px;
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 10px;
+}
+
+.book-name {
+    font-size: 14px;
+    line-height: 17px;
+    font-family: Lato;
+    font-variant: normal;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.book-author {
+    font-size: 10px;
+    line-height: 12px;
+    font-family: Lato;
+    font-variant: normal;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+}
+
+.disc-price {
+    font-size: 15px;
+    line-height: 18px;
+    font-family: Lato;
+    font-variant: normal;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.act-price {
+    text-decoration: line-through;
+    font-size: 9px;
+    line-height: 11px;
+    font-family: Lato;
+    font-variant: normal;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+}
+
+.price-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 11px;
+}
+
+.book-with-inc-dec {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.show-inc-dec {
+    margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.inc-dec {
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    /* UI Properties */
+    background: #FAFAFA 0% 0% no-repeat padding-box;
+    border: 1px solid #DBDBDB;
+    opacity: 1;
+    border-radius: 50%;
+}
+
+.showCount {
+    text-align: center;
+    width: 41px;
+    height: 24px;
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #DBDBDB;
+    border-radius: 1px;
+    opacity: 1;
+}
+
+.remove-book {
+    margin-left: 26px;
+    font-size: 12px;
+    line-height: 15px;
+    font-family: Lato;
+    font-variant: normal;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.place-button {
+    margin-left: 550px;
+    width: 151px;
+    height: 35px;
+    /* UI Properties */
+    background: #3371B5 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    border: none;
+    opacity: 1;
+    font-size: 14px;
+    line-height: 17px;
+    font-family: Lato;
+    font-variant: normal;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+
+}
+
+.add-address-button {
+    margin-left: 320px;
+    width: 150px;
+    height: 35px;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: Roboto;
+    font-variant: normal;
+    font-style: normal;
+    font-weight: normal;
+letter-spacing: 0px;
+border: #A03037 solid 1px;
+background: transparent;
+color: #A03037;
+opacity: 1;
+}
+
+.main-address-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 10px;
+}
+
+.name-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 10px;
+    margin-left: 40px;
+}
+
+.button-alignment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    row-gap: 20px;
+}
+
+.work-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.main-work-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 7px;
+}
+
+.work-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 10px;
+    margin-bottom: 15px;
+}
+
+::ng-deep .mat-mdc-form-field {
+    margin-top: 36px;
+    --mat-mdc-form-field-floating-label-scale: 0.75;
+    display: inline-flex;
+    flex-direction: column;
+    min-width: 0;
+    width: 250px;
+    text-align: left;
+}
+
+::ng-deep .mat-mdc-form-field {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--mdc-typography-body1-font-family, var(--mdc-typography-font-family,Lato));
+    font-size: var(--mdc-typography-body1-font-size, 12px);
+    line-height: var(--mdc-typography-body1-line-height, 15px);
+    font-weight: var(--mdc-typography-body1-font-weight, normal);
+    letter-spacing: var(--mdc-typography-body1-letter-spacing, 0px);
+    -webkit-text-decoration: var(--mdc-typography-body1-text-decoration, inherit);
+    text-decoration: var(--mdc-typography-body1-text-decoration, inherit);
+    text-transform: var(--mdc-typography-body1-text-transform, none);
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+    height: 45px !important;
+    flex: auto;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+    top: 21px !important;
+}
+
+.work-address {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
+}
+
+.city-state {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.address-given {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+}
+
+.work-address-edit {
+    margin-left: 10px;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: Roboto;
+    font-variant: normal;
+    font-style: normal;
+    font-weight: medium;
+    border: none;
+    background-color: transparent;
+    color: #A03037;
+}
+
+.details-confirm-button {
+    border: none;
+    width: 150px;
+height: 35px;
+/* UI Properties */
+background: #3371B5 0% 0% no-repeat padding-box;
+border-radius: 3px;
+opacity: 1;
+font-size: 14px;
+line-height: 17px;
+font-family: Lato;
+font-variant: normal;
+font-style: normal;
+font-weight: medium;
+letter-spacing: 0px;
+color: #FFFFFF;
+text-transform: uppercase;
+margin-top: 30px;
+margin-left: 560px;
+}
+
+.mat-accordion .mat-expansion-panel{
+    margin-bottom: 10px;
+  }

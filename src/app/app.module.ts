@@ -23,6 +23,12 @@ import {MatMenuModule} from '@angular/material/menu';
 import { SearchingPipe } from './Pipe/searchPipe/searching.pipe';
 import { SortingPipe } from './Pipe/sortingPipe/sorting.pipe';
 import { ViewBookComponent } from './component/view-book/view-book.component';
+import { CartComponent } from './component/cart/cart.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatRadioModule} from '@angular/material/radio';
+import { OrderplaceComponent } from './component/orderplace/orderplace.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +39,9 @@ import { ViewBookComponent } from './component/view-book/view-book.component';
     DisplayBooksComponent,
     SearchingPipe,
     SortingPipe,
-    ViewBookComponent
+    ViewBookComponent,
+    CartComponent,
+    OrderplaceComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,11 @@ import { ViewBookComponent } from './component/view-book/view-book.component';
     MatSnackBarModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule
   ],
   providers: [
     AuthguardService

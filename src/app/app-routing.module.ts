@@ -5,6 +5,8 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { GetAllBooksComponent } from './component/get-all-books/get-all-books.component';
 import { AuthenticationGuard } from './Authgaurd/authentication.guard';
 import { ViewBookComponent } from './component/view-book/view-book.component';
+import { CartComponent } from './component/cart/cart.component';
+import { OrderplaceComponent } from './component/orderplace/orderplace.component';
 
 const routes: Routes = [
   {path:'',pathMatch:'full',redirectTo:'login'},
@@ -15,6 +17,8 @@ const routes: Routes = [
     
     {path:'',component:GetAllBooksComponent},
     {path:'viewbook',component:ViewBookComponent},
+    {path : 'myCart',component:CartComponent},
+    {path : 'myCart/orderPlace',component:OrderplaceComponent}
 
   ]
 
