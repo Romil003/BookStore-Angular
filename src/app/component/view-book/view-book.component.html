@@ -19,7 +19,7 @@
             </div>
             <div class="button-class">
                 <div *ngIf="addCart">
-                    <button class="button-1" (click)="addTocart()" >ADD TO BAG</button>
+                    <button class="button-1" (click)="addTocart(getBookData._id)" >ADD TO BAG</button>
                 </div>
                 <div *ngIf="!addCart" class="inc-dec">
                     <button (click)="dec()" [disabled]="count === 1">-</button>

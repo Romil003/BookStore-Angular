@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   loginForm! : FormGroup
   signupForm! : FormGroup
   backgroundChange : boolean = false
-  token : any
+  
 
   constructor(private formbuilder : FormBuilder,
     private userService : UserService, 
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
         this.snackbar.open("Log-in successfully","",{
           duration : 2000
         })
-         localStorage.setItem('token',result.accessToken);
+         localStorage.setItem('token',result.result.accessToken);
          this.route.navigateByUrl('/dashboard');
         
         

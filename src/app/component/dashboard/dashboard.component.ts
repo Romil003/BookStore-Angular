@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/Service/Data/data.service';
 
 @Component({
@@ -8,10 +9,15 @@ import { DataService } from 'src/app/Service/Data/data.service';
 })
 export class DashboardComponent {
 
-  constructor(private dataService : DataService){}
+  constructor(private dataService : DataService,private route : Router){}
 
   searchData(event : any){
     this.dataService.sendingValue(event.target.value);
+  }
+
+  loggingOut(){
+    localStorage.removeItem('token');
+    this.route.navigateByUrl('/login');
   }
 
 }
