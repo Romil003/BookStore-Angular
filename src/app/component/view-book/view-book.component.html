@@ -61,13 +61,13 @@
                     <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
                 </div>
                 <div class="comment-input">
-                    <input type="text" placeholder="Write your preview" >
+                    <input type="text" placeholder="Write your preview" name="feedback" [(ngModel)]="feedback" >
                 </div>
                 
                 <!-- <textarea class="comment-input">Write your preview</textarea> -->
-                <button class="submitting">Submit</button>
+                <button class="submitting" (click)="givingFeedback(getBookData._id)">Submit</button>
             </div>
-            <div class="previews">
+            <div class="previews" *ngFor="let comt of obtainedFeedback">
                 <div class="name-review">
                     <div class="symbol">AC</div>
                     <span>Aniket Chile</span>
@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <div class="comment-sect">
-                    <p class="content-class-2">Good product. Even though the translation could have been better, Chanakya's neeti are thought provoking. Chanakya has written on many different topics and his writings are succinct.</p>
+                    <p class="content-class-2">{{comt.comment}}</p>
                 </div>
             </div>
             <div class="previews-2">

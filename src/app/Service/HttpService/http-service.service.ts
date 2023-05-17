@@ -21,14 +21,25 @@ export class HttpServiceService {
     
   }
 
-  postServiceWithPathVariable(url:string,token:boolean,httpAuthOptions :any){
-    console.log("posting from http service with path Variable =>");
-    // const httpOption = {
-    //   headers : new HttpHeaders({ 
-    //     'ContentType' : 'application/json'
-    //   })
-    // }
-    // console.log("dffsf ", httpOption)
-    return this.httpClient.post(this.baseUrl+url,token && httpAuthOptions);
+  deleteService(url:string,token:boolean,httpAuthOptions : any){
+    console.log("deleting from http service =>");
+    return this.httpClient.delete(this.baseUrl+url,token && httpAuthOptions);
   }
+
+  putService(url:string,reqPayload : any,token:boolean,httpAuthOptions : any){
+    console.log("updating from http service => ");
+    return this.httpClient.put(this.baseUrl+url,reqPayload,token && httpAuthOptions);
+    
+  }
+
+  // postServiceWithPathVariable(url:string,token:boolean,httpAuthOptions :any){
+  //   console.log("posting from http service with path Variable =>");
+  //    const httpOption = {
+  //      headers : new HttpHeaders({ 
+  //       'ContentType' : 'application/json'
+  //      })
+  //    }
+  //    console.log("dffsf ", httpOption)
+  //   return this.httpClient.post(this.baseUrl+url,token && httpAuthOptions);
+  // }
 }

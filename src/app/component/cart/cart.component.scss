@@ -184,6 +184,7 @@ opacity: 1;
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+    margin-bottom: 20px;
 }
 
 .show-inc-dec {
@@ -217,6 +218,7 @@ opacity: 1;
 }
 
 .remove-book {
+    cursor: pointer;
     margin-left: 26px;
     font-size: 12px;
     line-height: 15px;

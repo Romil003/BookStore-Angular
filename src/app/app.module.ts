@@ -29,6 +29,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import { OrderplaceComponent } from './component/orderplace/orderplace.component';
+import { WishlistComponent } from './component/wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { OrderplaceComponent } from './component/orderplace/orderplace.component
     SortingPipe,
     ViewBookComponent,
     CartComponent,
-    OrderplaceComponent
+    OrderplaceComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,

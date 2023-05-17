@@ -5,23 +5,12 @@ import { HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class OrderService {
 
   token : any;
-
   constructor(private httpService : HttpServiceService) { }
 
-  signUpService(reqData : any){
-    console.log("sign up service from user =>");
-    return this.httpService.postService('user/registration',reqData,false,{});
-  }
-
-  logInService(reqData : any){
-    console.log("log in service from user =>");
-    return this.httpService.postService('user/login',reqData,false,{});
-  }
-
-  updateCustomerDetails(reqData : any){
+  addOrder(reqData : any){
     this.token = localStorage.getItem('token');
 
     console.log(this.token);
@@ -33,6 +22,7 @@ export class UserService {
       })
   }
 
-  return this.httpService.putService('user/edit_user',reqData,true,httpOption);
+  return this.httpService.postService('user/add/order',reqData,true,httpOption);
   }
+
 }

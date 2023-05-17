@@ -7,6 +7,7 @@ import { AuthenticationGuard } from './Authgaurd/authentication.guard';
 import { ViewBookComponent } from './component/view-book/view-book.component';
 import { CartComponent } from './component/cart/cart.component';
 import { OrderplaceComponent } from './component/orderplace/orderplace.component';
+import { WishlistComponent } from './component/wishlist/wishlist.component';
 
 const routes: Routes = [
   {path:'',pathMatch:'full',redirectTo:'login'},
@@ -18,7 +19,8 @@ const routes: Routes = [
     {path:'',component:GetAllBooksComponent},
     {path:'viewbook',component:ViewBookComponent},
     {path : 'myCart',component:CartComponent},
-    {path : 'myCart/orderPlace',component:OrderplaceComponent}
+    {path : 'myCart/orderPlace',component:OrderplaceComponent},
+    {path:'wishlist',component:WishlistComponent}
 
   ]
 

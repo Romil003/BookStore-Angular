@@ -10,7 +10,7 @@
                 <mat-expansion-panel [expanded]="expand1"  class="main-accordion" hideToggle>
                     <mat-expansion-panel-header>
                         <mat-panel-title class="title-name">
-                            My cart (1)
+                            My cart ({{cartBooks.length}})
                         </mat-panel-title>
                         <mat-panel-description class="title-seperator">
                             <div class="location-selector">
@@ -26,19 +26,19 @@
                                 <img src="../../../assets/Image 11.png" height="85px" width="65px">
                             </div>
                             <div class="book-info">
-                                <span class="book-name">Don't Make Me Think</span>
-                                <span class="book-author">by Steve Krug</span>
+                                <span class="book-name">{{book.product_id.bookName}}</span>
+                                <span class="book-author">by {{book.product_id.author}}</span>
                                 <div class="price-info">
-                                    <span class="disc-price">Rs.1500</span>
-                                    <span class="act-price">Rs.2000</span>
+                                    <span class="disc-price">Rs.{{book.product_id.discountPrice}}</span>
+                                    <span class="act-price">Rs.{{book.product_id.price}}</span>
                                 </div>
                             </div>
                         </div>
                         <div class="show-inc-dec">
-                            <button class="inc-dec" (click)="dec()" [disabled]="count === 1" >-</button>
-                            <div class="showCount">{{count}}</div>
-                            <button class="inc-dec" (click)="inc()">+</button>
-                            <span class="remove-book">Remove</span>
+                            <button class="inc-dec" (click)="dec(book._id,book.quantityToBuy)" [disabled]="book.quantityToBuy === 1" >-</button>
+                            <div class="showCount">{{book.quantityToBuy}}</div>
+                            <button class="inc-dec" (click)="inc(book._id,book.quantityToBuy)">+</button>
+                            <span class="remove-book" (click)="removeBook(book._id)">Remove</span>
                         </div>
                     </div>
                     <div>
@@ -65,17 +65,17 @@
                         <div class="name-mobile">
                             <mat-form-field appearance="outline">
                                 <mat-label>Full Name</mat-label>
-                                <input matInput>
+                                <input matInput type="text" name="fullname" [(ngModel)]="fullname">
                             </mat-form-field>
                             <mat-form-field appearance="outline">
                                 <mat-label>Mobile number</mat-label>
-                                <input matInput>
+                                <input matInput type="text" name="mobilenumber" [(ngModel)]="mobilenumber">
                             </mat-form-field>
                         </div>
                         <div class="button-alignment">
                             <div class="work-content">
                                 <div>
-                                    <mat-radio-button value="work" (change)="enableEditButton1()"></mat-radio-button>
+                                    <mat-radio-button value="work" (change)="enableEditButton1()" name="work" ></mat-radio-button>
                                 </div>
                                 <div class="main-work-content">
                                     <div class="work-header">
@@ -85,16 +85,16 @@
                                     <div class="work-address">
                                         <div class="address-given">
                                             <label>Address</label>
-                                            <input type="text" style="width: 512px; height: 82px;" [disabled]="toggleButton1">
+                                            <input type="text" style="width: 512px; height: 82px;" name="address" [(ngModel)]="address1" [disabled]="toggleButton1">
                                         </div>
                                         <div class="city-state">
                                             <div class="address-given">
                                                 <label>city/town</label>
-                                                <input type="text" style="width: 248px; height: 45px;" [disabled]="toggleButton1">
+                                                <input type="text" style="width: 248px; height: 45px;" name="city" [(ngModel)]="city" [disabled]="toggleButton1">
                                             </div>
                                             <div class="address-given">
                                                 <label>state</label>
-                                                <input type="text" style="width: 248px; height: 45px;" [disabled]="toggleButton1">
+                                                <input type="text" style="width: 248px; height: 45px;" name="state" [(ngModel)]="state" [disabled]="toggleButton1">
                                             </div>
                                         </div>
                                     </div>
@@ -102,7 +102,7 @@
                             </div>
                             <div class="work-content">
                                 <div>
-                                    <mat-radio-button value="home" (change)="enableEditButton2()"></mat-radio-button>
+                                    <mat-radio-button value="home" (change)="enableEditButton2()" name="home" ></mat-radio-button>
                                 </div>
                                 <div class="main-work-content">
                                     <div class="work-header">
@@ -112,7 +112,7 @@
                                     <div class="work-address">
                                         <div class="address-given">
                                             <label>Address</label>
-                                            <input type="text" style="width: 512px; height: 82px;" [disabled]="toggleButton2">
+                                            <input type="text" style="width: 512px; height: 82px;" name="address" [(ngModel)]="address2" [disabled]="toggleButton2">
                                         </div>
                                     </div>
                                 </div>
@@ -130,23 +130,23 @@
                             Order summery
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <div class="book-with-inc-dec">
+                    <div class="book-with-inc-dec" *ngFor="let book of cartBooks">
                         <div class="book-details">
                             <div>
                                 <img src="../../../assets/Image 11.png" height="85px" width="65px">
                             </div>
                             <div class="book-info">
-                                <span class="book-name">Don't Make Me Think</span>
-                                <span class="book-author">by Steve Krug</span>
+                                <span class="book-name">{{book.product_id.bookName}}</span>
+                                <span class="book-author">by {{book.product_id.author}}</span>
                                 <div class="price-info">
-                                    <span class="disc-price">Rs.1500</span>
-                                    <span class="act-price">Rs.2000</span>
+                                    <span class="disc-price">Rs.{{book.product_id.discountPrice}}</span>
+                                    <span class="act-price">Rs.{{book.product_id.price}}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <button mat-button routerLink="orderPlace"  class="place-button">CHECKOUT</button>
+                        <button mat-button routerLink="orderPlace"   class="place-button" (click)="placeOrder()">CHECKOUT</button>
                     </div>
                 </mat-expansion-panel>
 

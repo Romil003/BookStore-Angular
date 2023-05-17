@@ -16,57 +16,67 @@ export class CartService {
   addingBookToCart(id : any){
     this.token = localStorage.getItem('token');
 
-    // const httpOption = new HttpHeaders()
-    // .set('Content-Type', 'application/json')
-    // .set('Authorization', 'Bearer ${token}');
+    console.log(this.token);
+    
     const httpOption = {
       headers : new HttpHeaders({ 
-        ContentType : 'application/json',
-        token : this.token
+        'ContentType' : 'application/json',
+        'x-access-token' : this.token
       })
     }
-    // const headers = new HttpHeaders();
-    // headers.set("ContentType" , 'application/json')
 
-    // console.log(headers);
-    // console.log("dffsf ", httpOption)
-    // const httpOption = {
-    //   headers : new HttpHeaders({ 
-    //     ContentType : 'application/json',
-    //     token : this.token
-    //   })
-    // }
-    // console.log("Adding book to cart");
-    // console.log(httpOption);
-    // console.log(this.token);
-   return this.httpService.postServiceWithPathVariable('user/add_cart_item/'+id,true,httpOption);
-  // return from(this.token).pipe(
-  //   switchMap(token => {
-  //     if (token) {
-  //       const headers = new HttpHeaders()
-  //         .set('Content-Type', 'application/json')
-  //         .set('Authorization', `Bearer ${token}`);
-
-  //       return this.httpService.postServiceWithPathVariable('user/add_cart_item/'+id, { headers });
-  //     } else {
-  //       return of(null); // or throw an error
-  //     }
-  //   })
-  // );
+   return this.httpService.postService('user/add_cart_item/'+id,{},true,httpOption);
   
-    
+  
   }
 
   getAllCartBooks(){
-    // this.token = localStorage.getItem('token');
 
-    // const httpOption = {
-    //   headers : new HttpHeaders({ 
-    //     ContentType : 'application/json',
-    //     token : this.token
-    //   })
-    // }
+    this.token = localStorage.getItem('token');
 
-    return this.httpService.getService('user/get_cart_items',false,{});
+    console.log(this.token);
+    
+    const httpOption = {
+      headers : new HttpHeaders({ 
+        'ContentType' : 'application/json',
+        'x-access-token' : this.token
+      })
+    }
+    return this.httpService.getService('user/get_cart_items',true,httpOption);
   }
+
+  updateQuantity(cartId : any,reqData : any){
+
+    this.token = localStorage.getItem('token');
+
+    console.log(this.token);
+    
+    const httpOption = {
+      headers : new HttpHeaders({ 
+        'ContentType' : 'application/json',
+        'x-access-token' : this.token
+      })
+    }
+
+    return this.httpService.putService('user/cart_item_quantity/'+cartId,reqData,true,httpOption);
+
+  }
+
+  removeBookFromCart(cartId : any){
+    this.token = localStorage.getItem('token');
+
+    console.log(this.token);
+    
+    const httpOption = {
+      headers : new HttpHeaders({ 
+        'ContentType' : 'application/json',
+        'x-access-token' : this.token
+      })
+  }
+
+  return this.httpService.deleteService('user/remove_cart_item/'+cartId,true,httpOption);
+}
+
+
+
 }
