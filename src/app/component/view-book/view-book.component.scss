@@ -354,9 +354,24 @@
     
 }
 
+
+.star-size:hover {
+    width: 30px;
+    height: 29px;
+    background-color: gold;
+    border-radius: 80%;
+}
+
 .star-size-1 {
     width: 18px;
     height: 15px;
+}
+
+.star-size-2 {
+    width: 20px;
+    height: 19px;
+    opacity: 1;
+    
 }
 
 

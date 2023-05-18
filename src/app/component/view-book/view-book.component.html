@@ -27,7 +27,7 @@
                     <button (click)="inc()">+</button>
                 </div>
                 
-                <button class="button-2"><img src="../../../assets/favorite_white_18dp.svg"> WHISHLIST</button>
+                <button class="button-2" (click)="addingBookToWishlist(getBookData._id)"><img src="../../../assets/favorite_white_18dp.svg" > WHISHLIST</button>
             </div>
         </div>
         <div class="book-details">
@@ -54,11 +54,16 @@
             <div class="overall-rating-class">
                 <span class="overall-text">Overall rating</span>
                 <div class="stars">
-                    <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
-                    <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
-                    <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
-                    <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
-                    <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                    <img src="../../../assets/filled-star.png" class="star-size-1" *ngIf="showGoldenStar">
+                    <img src="../../../assets/star_border_black_18dp.svg" class="star-size" (click)="showrating()" *ngIf="!showGoldenStar">
+                    <img src="../../../assets/filled-star.png" class="star-size-1" *ngIf="showGoldenStar2">
+                    <img src="../../../assets/star_border_black_18dp.svg" class="star-size" (click)="showRatingStar2()" *ngIf="!showGoldenStar2">
+                    <img src="../../../assets/filled-star.png" class="star-size-1" *ngIf="showGoldenStar3">
+                    <img src="../../../assets/star_border_black_18dp.svg" class="star-size" (click)="showRatingStar3()" *ngIf="!showGoldenStar3">
+                    <img src="../../../assets/filled-star.png" class="star-size-1" *ngIf="showGoldenStar4">
+                    <img src="../../../assets/star_border_black_18dp.svg" class="star-size" (click)="showRatingStar4()" *ngIf="!showGoldenStar4">
+                    <img src="../../../assets/filled-star.png" class="star-size-1" *ngIf="showGoldenStar5">
+                    <img src="../../../assets/star_border_black_18dp.svg" class="star-size" (click)="showRatingStar5()" *ngIf="!showGoldenStar5">
                 </div>
                 <div class="comment-input">
                     <input type="text" placeholder="Write your preview" name="feedback" [(ngModel)]="feedback" >
@@ -74,11 +79,17 @@
                 </div>
                 <div class="star-class">
                     <div class="stars">
+                        <div>
+                            <img src="../../../assets/filled-star.png" class="star-size-1">
+                        </div>
+                        <!-- <img src="../../../assets/filled-star.png" class="star-size-1">
                         <img src="../../../assets/filled-star.png" class="star-size-1">
-                        <img src="../../../assets/filled-star.png" class="star-size-1">
-                        <img src="../../../assets/filled-star.png" class="star-size-1">
-                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
-                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
+                        <img src="../../../assets/filled-star.png" class="star-size-1"> -->
+                        <div >
+                            <img src="../../../assets/star_border_black_18dp.svg" class="star-size-2">
+                        </div>
+                        
+                        <!-- <img src="../../../assets/star_border_black_18dp.svg" class="star-size-2"> -->
                     </div>
                 </div>
                 <div class="comment-sect">

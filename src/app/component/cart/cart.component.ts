@@ -27,8 +27,7 @@ export class CartComponent implements OnInit {
 
   expandPanel3 : boolean = false;
   
-  toggleButton1: boolean = true;
-  toggleButton2: boolean = true;
+  
   editButton1 : boolean = true;
   editButton2 : boolean = true;
 
@@ -62,6 +61,19 @@ export class CartComponent implements OnInit {
     this.showContent = !this.showContent;
   }
 
+  expandPanel(panelIndex: number): void {
+    switch (panelIndex) {
+      case 2:
+        this.expandPanel2 = true;
+        break;
+      case 3:
+        this.expandPanel3 = true;
+        break;
+      // Handle additional panels...
+    }
+
+  }
+
   toOpenPanel3(){
     this.expandPanel3 = !this.expandPanel3;
     this.updateDetailsOfCustomerForAddress();
@@ -81,25 +93,15 @@ export class CartComponent implements OnInit {
     
   }
 
-   
-
- enable1(){
-    this.toggleButton1 = !this.toggleButton1;
- }
-
- enable2(){
-  this.toggleButton2 = !this.toggleButton2;
-}
-
  enableEditButton1(){
-    this.editButton1 = !this.editButton1;
+    
     this.addressType1 = "Office";
     
  }
 
  enableEditButton2(){
-  this.editButton2= !this.editButton2;
-  this.addressType2 = "home";
+  
+  this.addressType2 = "Home";
 }
 
   getAllCartItems(){
@@ -145,6 +147,17 @@ export class CartComponent implements OnInit {
         "fullAddress": this.address1,
         "city": this.city,
         "state": this.state
+      }
+      this.userService.updateCustomerDetails(reqData).subscribe((result : any) => {
+        console.log(result);
+        
+      })
+    } else if(this.addressType2 === "Home") {
+      let reqData ={
+        "addressType": "Home",
+        "fullAddress": this.address2,
+        "city": "Mumbai",
+        "state": "Maharastra"
       }
       this.userService.updateCustomerDetails(reqData).subscribe((result : any) => {
         console.log(result);

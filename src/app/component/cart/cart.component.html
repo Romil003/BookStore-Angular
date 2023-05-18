@@ -6,7 +6,7 @@
             <span class="text-2"> My Cart</span>
         </div>
         <div class="container-2">
-            <mat-accordion>
+            <mat-accordion >
                 <mat-expansion-panel [expanded]="expand1"  class="main-accordion" hideToggle>
                     <mat-expansion-panel-header>
                         <mat-panel-title class="title-name">
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div>
-                        <button mat-button (click)="toOpenPanel2()"  class="place-button">PLACE ORDER</button>
+                        <button mat-button (click)="expandPanel(2)"  class="place-button">PLACE ORDER</button>
                     </div>
                 </mat-expansion-panel>
 
@@ -74,53 +74,37 @@
                         </div>
                         <div class="button-alignment">
                             <div class="work-content">
-                                <div>
-                                    <mat-radio-button value="work" (change)="enableEditButton1()" name="work" ></mat-radio-button>
-                                </div>
                                 <div class="main-work-content">
-                                    <div class="work-header">
-                                        <span class="work-text">1.WORK</span>
-                                        <button class="work-address-edit" type="button" (click)="enable1()" [disabled]="editButton1">Edit</button>
-                                    </div>
                                     <div class="work-address">
                                         <div class="address-given">
                                             <label>Address</label>
-                                            <input type="text" style="width: 512px; height: 82px;" name="address" [(ngModel)]="address1" [disabled]="toggleButton1">
+                                            <input type="text" style="width: 512px; height: 82px;" name="address" [(ngModel)]="address1" >
                                         </div>
                                         <div class="city-state">
                                             <div class="address-given">
                                                 <label>city/town</label>
-                                                <input type="text" style="width: 248px; height: 45px;" name="city" [(ngModel)]="city" [disabled]="toggleButton1">
+                                                <input type="text" style="width: 248px; height: 45px;" name="city" [(ngModel)]="city" >
                                             </div>
                                             <div class="address-given">
                                                 <label>state</label>
-                                                <input type="text" style="width: 248px; height: 45px;" name="state" [(ngModel)]="state" [disabled]="toggleButton1">
+                                                <input type="text" style="width: 248px; height: 45px;" name="state" [(ngModel)]="state" >
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="work-content">
-                                <div>
-                                    <mat-radio-button value="home" (change)="enableEditButton2()" name="home" ></mat-radio-button>
-                                </div>
-                                <div class="main-work-content">
-                                    <div class="work-header">
-                                        <span class="work-text">2.HOME</span>
-                                        <button class="work-address-edit" (click)="enable2()" [disabled]="editButton2">Edit</button>
-                                    </div>
-                                    <div class="work-address">
-                                        <div class="address-given">
-                                            <label>Address</label>
-                                            <input type="text" style="width: 512px; height: 82px;" name="address" [(ngModel)]="address2" [disabled]="toggleButton2">
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="address-type-container">
+                                <label id="adddressType">Type</label>
+                                <mat-radio-group aria-labelledby="addressType" class="radio-button-arrangement">
+                                    <mat-radio-button value="home" (change)="enableEditButton2()" name="home">Home</mat-radio-button>
+                                    <mat-radio-button value="work" (change)="enableEditButton1()" name="work">Work</mat-radio-button>
+                                    <mat-radio-button value="other">Other</mat-radio-button>
+                                  </mat-radio-group>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <button mat-button (click)="toOpenPanel3()"  class="details-confirm-button">CONTINUE</button>
+                        <button mat-button (click)="expandPanel(3)"  class="details-confirm-button">CONTINUE</button>
                     </div>
                 </mat-expansion-panel>
 

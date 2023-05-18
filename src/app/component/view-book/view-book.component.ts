@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CartService } from 'src/app/Service/CartService/cart.service';
 import { DataService } from 'src/app/Service/Data/data.service';
 import { FeedbackService } from 'src/app/Service/FeedbackService/feedback.service';
+import { WishlistService } from 'src/app/Service/WishlistService/wishlist.service';
 
 @Component({
   selector: 'app-view-book',
@@ -16,8 +17,16 @@ export class ViewBookComponent implements OnInit {
   count = 1;
   feedback : any;
   obtainedFeedback : any
+  showGoldenStar : boolean = false;
+  showGoldenStar2 : boolean = false;
+  showGoldenStar3 : boolean = false;
+  showGoldenStar4 : boolean = false;
+  showGoldenStar5 : boolean = false;
+  starRatingValue : any;
+  ratingArray : any  = [];
   constructor(private route : Router,private dataService : DataService,
-    private cartService : CartService,private feedbackService : FeedbackService){
+    private cartService : CartService,private feedbackService : FeedbackService,
+    private wishlistService : WishlistService){
 
     }
 
@@ -25,6 +34,39 @@ export class ViewBookComponent implements OnInit {
   ngOnInit(){
     this.gettingDataOfOneBook()
     
+  }
+
+  showrating(){
+    this.showGoldenStar = !this.showGoldenStar;
+    this.starRatingValue = 1;
+  }
+
+  showRatingStar2(){
+    this.showGoldenStar = !this.showGoldenStar;
+    this.showGoldenStar2 = ! this.showGoldenStar2;
+    this.starRatingValue = 2;
+  }
+
+  showRatingStar3(){
+    this.showGoldenStar = !this.showGoldenStar;
+    this.showGoldenStar2 = !this.showGoldenStar2;
+    this.showGoldenStar3 = !this.showGoldenStar3;
+    this.starRatingValue = 3;
+  }
+  showRatingStar4(){
+    this.showGoldenStar = !this.showGoldenStar;
+    this.showGoldenStar2 = !this.showGoldenStar2;
+    this.showGoldenStar3 = !this.showGoldenStar3;
+    this.showGoldenStar4 = !this.showGoldenStar4;
+    this.starRatingValue = 4;
+  }
+  showRatingStar5(){
+    this.showGoldenStar = !this.showGoldenStar;
+    this.showGoldenStar2 = !this.showGoldenStar2;
+    this.showGoldenStar3 = !this.showGoldenStar3;
+    this.showGoldenStar4 = !this.showGoldenStar4;
+    this.showGoldenStar5 = !this.showGoldenStar5;
+    this.starRatingValue = 5;
   }
 
   
@@ -61,7 +103,7 @@ export class ViewBookComponent implements OnInit {
 
     let reqData = {
       "comment": this.feedback,
-      "rating": "3"
+      "rating": this.starRatingValue
     }
 
     this.feedbackService.addFeedback(productId,reqData).subscribe((result : any) => {
@@ -75,8 +117,21 @@ export class ViewBookComponent implements OnInit {
     this.feedbackService.gettingAllComments(productId).subscribe((result : any) => {
       this.obtainedFeedback = result.result;
       console.log(this.obtainedFeedback);
+      for(let data of this.obtainedFeedback){
+        const rating = data.rating;
+        this.ratingArray.push(rating);
+      }
+    })
+  }
+
+  addingBookToWishlist(productId : any){
+    console.log("Adding to book to wishlist => ");
+
+    this.wishlistService.addBookToWishlist(productId).subscribe((result : any) => {
+      console.log(result);
       
     })
+    
   }
 
 }
