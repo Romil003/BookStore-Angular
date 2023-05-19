@@ -68,8 +68,6 @@
                 <div class="comment-input">
                     <input type="text" placeholder="Write your preview" name="feedback" [(ngModel)]="feedback" >
                 </div>
-                
-                <!-- <textarea class="comment-input">Write your preview</textarea> -->
                 <button class="submitting" (click)="givingFeedback(getBookData._id)">Submit</button>
             </div>
             <div class="previews" *ngFor="let comt of obtainedFeedback">
@@ -79,39 +77,14 @@
                 </div>
                 <div class="star-class">
                     <div class="stars">
-                        <div>
-                            <img src="../../../assets/filled-star.png" class="star-size-1">
-                        </div>
-                        <!-- <img src="../../../assets/filled-star.png" class="star-size-1">
-                        <img src="../../../assets/filled-star.png" class="star-size-1">
-                        <img src="../../../assets/filled-star.png" class="star-size-1"> -->
-                        <div >
-                            <img src="../../../assets/star_border_black_18dp.svg" class="star-size-2">
-                        </div>
-                        
-                        <!-- <img src="../../../assets/star_border_black_18dp.svg" class="star-size-2"> -->
+                        <span class="star" *ngFor="let i of [1, 2, 3, 4, 5]"
+                        [class.highlighted]="i <= comt.rating">
+                        &#9733;
+                      </span>
                     </div>
                 </div>
                 <div class="comment-sect">
                     <p class="content-class-2">{{comt.comment}}</p>
-                </div>
-            </div>
-            <div class="previews-2">
-                <div class="name-review">
-                    <div class="symbol">SB</div>
-                    <span>Shweta Bodkar</span>
-                </div>
-                <div class="star-class">
-                    <div class="stars">
-                        <img src="../../../assets/filled-star.png" class="star-size-1">
-                        <img src="../../../assets/filled-star.png" class="star-size-1">
-                        <img src="../../../assets/filled-star.png" class="star-size-1">
-                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
-                        <img src="../../../assets/star_border_black_18dp.svg" class="star-size">
-                    </div>
-                </div>
-                <div class="comment-sect">
-                    <p class="content-class-2">Good product. Even though the translation could have been better, Chanakya's neeti are thought provoking. Chanakya has written on many different topics and his writings are succinct.</p>
                 </div>
             </div>
         </div>

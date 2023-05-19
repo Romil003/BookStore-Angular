@@ -26,10 +26,11 @@
                         <button class="log-out-button" (click)="loggingOut()">Log Out</button>
                     </div>
                 </mat-menu>
-                <span class="text-2">Poonam</span>
+                <span class="text-2">Neeraja</span>
             </div>
             <div class="ico-3">
-                <img src="../../../assets/supermarket (1).svg" routerLink="myCart">
+                <mat-icon [matBadge]="typesOfBookInCart" matBadgeSize="small" routerLink="myCart">local_grocery_store</mat-icon>
+                <!-- <span [matBadge]="15" ><img src="../../../assets/supermarket (1).svg" routerLink="myCart" height="20px" width="20px"  ></span> -->
                 <span class="text-3" >Cart</span>
             </div>
         </mat-toolbar>

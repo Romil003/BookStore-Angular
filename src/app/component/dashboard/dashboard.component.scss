@@ -72,15 +72,19 @@ input[type="search"]::placeholder {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    row-gap: 5px;
     border-color: #8F2B2F !important;
     background: transparent;
     border: solid 1px;
     height: 59px;
     width: 60px;
+   
 }
 
+
+
 .text-3 {
-    padding-top: 14px;
+    // padding-top: 14px;
     font-size: 10px;
     color: #fff;
     line-height: 11px;
@@ -189,3 +193,24 @@ input[type="search"]::placeholder {
     color: #FFFFFF;
     opacity: 1;
 }
+
+.mat-badge {
+    position: relative;
+    color: white;
+}
+
+::ng-deep .mat-badge-content {
+    background: #fff ;
+    color:#A03037 ;
+}
+
+// .mat-badge {
+//     position: relative;
+    
+    
+// }
+
+// .mat-badge-content{
+//     background: #fff;
+//     color:#A03037;
+//   }

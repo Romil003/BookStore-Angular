@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/Service/CartService/cart.service';
 import { DataService } from 'src/app/Service/Data/data.service';
 
 @Component({
@@ -7,9 +8,14 @@ import { DataService } from 'src/app/Service/Data/data.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
-  constructor(private dataService : DataService,private route : Router){}
+  constructor(private dataService : DataService,private route : Router,private cartService : CartService ){}
+  typesOfBookInCart = 0
+  cartData  = [];
+  ngOnInit() {
+   this.gettingAllCartData();
+  }
 
   searchData(event : any){
     this.dataService.sendingValue(event.target.value);
@@ -18,6 +24,19 @@ export class DashboardComponent {
   loggingOut(){
     localStorage.removeItem('token');
     this.route.navigateByUrl('/login');
+  }
+
+  gettingAllCartData(){
+    console.log('getting all cart items =>');
+    this.cartService.getAllCartBooks().subscribe((result : any) => {
+      console.log(result);
+      this.cartData = result.result;
+      this.typesOfBookInCart = this.cartData.length;
+      this.dataService.sendingAllCartData(this.cartData);
+    })
+
+    
+
   }
 
 }

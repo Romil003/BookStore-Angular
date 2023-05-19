@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
   loginForm! : FormGroup
   signupForm! : FormGroup
   backgroundChange : boolean = false
-  
+  isChecked : boolean = true;
+  person : string = "Admin";
 
   constructor(private formbuilder : FormBuilder,
     private userService : UserService, 
@@ -24,7 +25,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(){
     this.loginForm = this.formbuilder.group({
       email : ['',[Validators.required]],
-      password : ['',[Validators.required]]
+      password : ['',[Validators.required]],
+      isChecked : ['']
     })
 
     this.signupForm = this.formbuilder.group({
@@ -37,6 +39,16 @@ export class LoginComponent implements OnInit {
 
   onBGChange(){
     this.backgroundChange = !this.backgroundChange;
+  }
+
+  changePerson(){
+    this.isChecked = !this.isChecked;
+    if(this.isChecked){
+      this.person = "User"
+    }
+    else {
+      this.person = "Admin";
+    }
   }
 
   logIn(){

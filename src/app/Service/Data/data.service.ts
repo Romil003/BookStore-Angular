@@ -30,4 +30,11 @@ export class DataService {
   sendingOrderId(msg : any){
     this.mainSource3.next(msg);
   }
+
+  private mainSource4 = new BehaviorSubject([]);
+  currentSource4 = this.mainSource4.asObservable();
+
+  sendingAllCartData(msg : any){
+    this.mainSource4.next(msg);
+  }
 }

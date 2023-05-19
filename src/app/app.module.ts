@@ -30,6 +30,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import { OrderplaceComponent } from './component/orderplace/orderplace.component';
 import { WishlistComponent } from './component/wishlist/wishlist.component';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { WishlistComponent } from './component/wishlist/wishlist.component';
     MatExpansionModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatRadioModule
+    MatRadioModule,
+    MatBadgeModule,
+    MatSlideToggleModule
   ],
   providers: [
     AuthguardService

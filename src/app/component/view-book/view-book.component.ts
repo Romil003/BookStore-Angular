@@ -23,6 +23,7 @@ export class ViewBookComponent implements OnInit {
   showGoldenStar4 : boolean = false;
   showGoldenStar5 : boolean = false;
   starRatingValue : any;
+  singleRating = [];
   ratingArray : any  = [];
   constructor(private route : Router,private dataService : DataService,
     private cartService : CartService,private feedbackService : FeedbackService,
@@ -118,8 +119,8 @@ export class ViewBookComponent implements OnInit {
       this.obtainedFeedback = result.result;
       console.log(this.obtainedFeedback);
       for(let data of this.obtainedFeedback){
-        const rating = data.rating;
-        this.ratingArray.push(rating);
+        this.singleRating = data.rating;
+        this.ratingArray.push(this.singleRating);
       }
     })
   }

@@ -16,21 +16,18 @@ export class CartComponent implements OnInit {
   constructor(private cartService : CartService ,
      private userService : UserService,
      private orderService : OrderService,
-     private dataService : DataService){}
+     private dataService : DataService){
+      this.refreshPageAfterAnyUpdates();
+     }
   ngOnInit(){
-   this.refreshPageAfterAnyUpdates();
+    
   }
 
   expand1 : boolean = true
   showContent : boolean = false;
   expandPanel2 : boolean = false;
-
   expandPanel3 : boolean = false;
   
-  
-  editButton1 : boolean = true;
-  editButton2 : boolean = true;
-
   fullname : any;
   mobilenumber : any;
   addressType1:any;
@@ -39,68 +36,53 @@ export class CartComponent implements OnInit {
   city : any;
   state : any;
   addressType2 : any;
-   totalOrderArray : any  = [];
-   forId : any;
-   orderId : any
-  // step = 0;
+  totalOrderArray : any  = [];
+  forId : any;
+  orderId : any
+  
+  countQuantity = 0;
+  totalcartPrice = 0;
+  pricePerBook = 0;
+  quantityPerBook = 0;
 
-  // setStep(index: number) {
-  //   this.step = index;
-  // }
+  firstPanelExpanded = true;
+  secondPanelExpanded = false;
+  thirdPanelExpanded = false;
 
-  // nextStep() {
-  //   this.step++;
-  // }
-
-  toOpenPanel2(){
-    this.expandPanel2 = !this.expandPanel2;
+  displayPlaceOrder : boolean = true
+  displayContinueButton : boolean = true;
+  onFirstPanelButtonClick(): void {
     this.showContent = !this.showContent;
+    this.secondPanelExpanded = !this.secondPanelExpanded;
+    this.displayPlaceOrder = false;
   }
 
-  panel2Close(){
-    this.showContent = !this.showContent;
-  }
-
-  expandPanel(panelIndex: number): void {
-    switch (panelIndex) {
-      case 2:
-        this.expandPanel2 = true;
-        break;
-      case 3:
-        this.expandPanel3 = true;
-        break;
-      // Handle additional panels...
-    }
-
-  }
-
-  toOpenPanel3(){
-    this.expandPanel3 = !this.expandPanel3;
+  onSecondPanelButtonClick(): void {
     this.updateDetailsOfCustomerForAddress();
+    this.thirdPanelExpanded = !this.thirdPanelExpanded;
+    this.displayContinueButton = false;
   }
 
   dec(cardId:any,getQuantity : any){
     getQuantity -=1;
-    let quantity = getQuantity;
-    this.updateBookQuantity(cardId,quantity);
+    this.countQuantity = getQuantity;
+    this.updateBookQuantity(cardId,this.countQuantity);
     
   }
 
   inc(cardId:any,getQuantity : any){
     getQuantity +=1;
-    let quantity = getQuantity;
-    this.updateBookQuantity(cardId,quantity);
+    this.countQuantity = getQuantity;
+    this.updateBookQuantity(cardId,this.countQuantity);
     
   }
 
  enableEditButton1(){
-    
     this.addressType1 = "Office";
     
  }
 
  enableEditButton2(){
-  
   this.addressType2 = "Home";
 }
 
@@ -109,18 +91,31 @@ export class CartComponent implements OnInit {
     this.cartService.getAllCartBooks().subscribe((result : any) => {
       console.log(result);
       this.cartBooks = result.result;
-      
+      for(let book of this.cartBooks){
+        this.pricePerBook = book.product_id.discountPrice;
+        this.quantityPerBook = book.quantityToBuy;
+        this.totalcartPrice += this.pricePerBook*this.quantityPerBook;
+      }
+      console.log(this.cartBooks);
+      console.log("Total price of cart => Rs. ",this.totalcartPrice);
+            
     })
+    // this.dataService.currentSource4.subscribe((result : any) => {
+    //   console.log(result);
+    //   this.cartBooks = result;
+      
+    // })
   }
 
   updateBookQuantity(cardId : any,quantity :any){
     let reqData = {
       "quantityToBuy": quantity
     }
-    this.cartService.updateQuantity(cardId,reqData).subscribe((result) => {
+    this.cartService.updateQuantity(cardId,reqData).subscribe((result : any) => {
       console.log(result);
       
     })
+    this.getAllCartItems();
   }
 
   removeBook(cartId : any){

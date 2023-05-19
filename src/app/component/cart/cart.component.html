@@ -6,8 +6,8 @@
             <span class="text-2"> My Cart</span>
         </div>
         <div class="container-2">
-            <mat-accordion >
-                <mat-expansion-panel [expanded]="expand1"  class="main-accordion" hideToggle>
+            <mat-accordion  multi >
+                <mat-expansion-panel [expanded]="firstPanelExpanded"    class="main-accordion" hideToggle>
                     <mat-expansion-panel-header>
                         <mat-panel-title class="title-name">
                             My cart ({{cartBooks.length}})
@@ -42,16 +42,16 @@
                         </div>
                     </div>
                     <div>
-                        <button mat-button (click)="expandPanel(2)"  class="place-button">PLACE ORDER</button>
+                        <button mat-button (click)="onFirstPanelButtonClick()"  class="place-button" *ngIf="displayPlaceOrder">PLACE ORDER</button>
                     </div>
                 </mat-expansion-panel>
 
-                <mat-expansion-panel [expanded]="expandPanel2" (closed)="panel2Close()"  class="main-accordion" hideToggle>
+                <mat-expansion-panel [expanded]="secondPanelExpanded"   class="main-accordion" hideToggle>
                     <mat-expansion-panel-header *ngIf="showContent">
                         <mat-panel-title class="title-name">
                             Customer Details
                         </mat-panel-title>
-                        <mat-panel-description>
+                        <mat-panel-description *ngIf="displayContinueButton">
                             <button mat-button class="add-address-button">Add new Address</button>
                         </mat-panel-description>
                     </mat-expansion-panel-header>
@@ -104,11 +104,11 @@
                         </div>
                     </div>
                     <div>
-                        <button mat-button (click)="expandPanel(3)"  class="details-confirm-button">CONTINUE</button>
+                        <button mat-button (click)="onSecondPanelButtonClick()" *ngIf="displayContinueButton"  class="details-confirm-button">CONTINUE</button>
                     </div>
                 </mat-expansion-panel>
 
-                <mat-expansion-panel [expanded]="expandPanel3"  class="main-accordion" hideToggle>
+                <mat-expansion-panel [expanded]="thirdPanelExpanded"  class="main-accordion" hideToggle>
                     <mat-expansion-panel-header>
                         <mat-panel-title class="title-name">
                             Order summery
