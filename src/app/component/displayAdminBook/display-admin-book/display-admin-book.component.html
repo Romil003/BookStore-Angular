@@ -1,0 +1,21 @@
+<div class="book-main-container">
+    <div class="book-show-container" *ngFor="let book of adminBooks | searching : searchbookArray">
+        <div class="book-and-button">
+            <div class="book-details">
+                <img src="../../../assets/Image 11.png" height="85px" width="65px">
+                <div class="book-info">
+                    <span class="book-name">{{book.bookName}}</span>
+                    <span class="author-name">{{book.author}}</span>
+                    <span class="quantity">Qty ({{book.quantity}})</span>
+                    <div class="price-info">
+                        <span class="discounted-price">Rs.{{book.discountPrice}}</span>
+                        <span class="actual-price">Rs.{{book.price}}</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="../../../assets/delete_black_18dp.svg" (click)="removeBook(book._id)">
+            </div>
+        </div>
+    </div>
+</div>

@@ -49,36 +49,23 @@
                                     <mat-label>Full Name</mat-label>
                                     <input matInput type="text" formControlName="fullname" placeholder="Name" name="fullname">
                                 </mat-form-field>
-                                <!-- <div>
-                                    <label for="name">Name</label>
-                                    <input id="name" type="text" formControlName="fullName" placeholder="Enter your name">
-                                </div> -->
                                 <mat-form-field appearance="outline">
                                     <mat-label>Email</mat-label>
                                     <input matInput type="email" formControlName="Email" placeholder="Email" name="email">
                                 </mat-form-field>
-                                <!-- <div>
-                                    <label for="email">Email</label>
-                                    <input id="email" type="email" formControlName="email" placeholder="Email">
-                                </div>
-                                <div>
-                                    <label for="password">Password</label>
-                                    <input id="password" type="password" formControlName="password" placeholder="password">
-                                </div> -->
                                 <mat-form-field appearance="outline">
                                     <mat-label>Password</mat-label>
                                     <input matInput type="password" formControlName="passWord" placeholder="password" name="password">
                                     <mat-icon matSuffix class="suffix-img"><img
                                             src="../../../assets/visibility_black_24dp.svg"></mat-icon>
                                 </mat-form-field>
-                                <!-- <div>
-                                    <label for="mobileNumber">Mobile Number</label>
-                                    <input id="mobileNumber" formControlName="mobileNumber" placeholder="Mobile number">
-                                </div> -->
                                 <mat-form-field appearance="outline">
                                     <mat-label>Mobile Number</mat-label>
                                     <input matInput formControlName="mobilenumber" placeholder="Mobile number" name="mobilenumber">
                                 </mat-form-field>
+                                <div class="switch-button">
+                                    <mat-slide-toggle name="checked" formControlName="isChecked" (toggleChange)="changePerson()">Switch To: {{person}}</mat-slide-toggle>
+                                </div>
                                 <button mat-raised-button class="Log-in-button" (click)="signUp()">Signup</button>
                             </div>
                         </div>

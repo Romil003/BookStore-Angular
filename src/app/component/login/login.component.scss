@@ -223,14 +223,6 @@
      top: 20px; 
 }
 
-// label,input{
-//     display: block;
-// }
-
-// input{
-//     width: 246px;
-//     height: 35px;
-// }
 
 ::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline {
     border-color: #A03037;
@@ -241,4 +233,8 @@
 ::ng-deep .mdc-tab-indicator .mdc-tab-indicator__content--underline {
     border-top-width: 5px !important;
     border-radius: 30%;
+}
+
+.switch-button {
+    margin-top: -20px;
 }

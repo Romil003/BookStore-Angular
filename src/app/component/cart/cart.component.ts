@@ -17,7 +17,7 @@ export class CartComponent implements OnInit {
      private userService : UserService,
      private orderService : OrderService,
      private dataService : DataService){
-      this.refreshPageAfterAnyUpdates();
+      this.getAllCartItems();
      }
   ngOnInit(){
     
@@ -98,7 +98,6 @@ export class CartComponent implements OnInit {
       }
       console.log(this.cartBooks);
       console.log("Total price of cart => Rs. ",this.totalcartPrice);
-            
     })
     // this.dataService.currentSource4.subscribe((result : any) => {
     //   console.log(result);
@@ -204,6 +203,18 @@ export class CartComponent implements OnInit {
       
     })
   }
+
+  getTotalPrice(){
+    this.getAllCartItems();
+    for(let book of this.cartBooks){
+      this.pricePerBook = book.product_id.discountPrice;
+      this.quantityPerBook = book.quantityToBuy;
+      this.totalcartPrice += this.pricePerBook*this.quantityPerBook;
+    }
+    console.log(this.cartBooks);
+    console.log("Total price of cart => Rs. ",this.totalcartPrice);
+  }
+
 
 
 }

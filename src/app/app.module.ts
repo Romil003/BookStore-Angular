@@ -32,6 +32,10 @@ import { OrderplaceComponent } from './component/orderplace/orderplace.component
 import { WishlistComponent } from './component/wishlist/wishlist.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { AdminboardComponent } from './component/adminboard/adminboard.component';
+import { AdminAuthguardService } from './Service/AdminGuardService/admin-authguard.service';
+import { GetAllAdminBooksComponent } from './component/get-admin-books/get-all-admin-books/get-all-admin-books.component';
+import { DisplayAdminBookComponent } from './component/displayAdminBook/display-admin-book/display-admin-book.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     ViewBookComponent,
     CartComponent,
     OrderplaceComponent,
-    WishlistComponent
+    WishlistComponent,
+    AdminboardComponent,
+    GetAllAdminBooksComponent,
+    DisplayAdminBookComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +78,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatSlideToggleModule
   ],
   providers: [
-    AuthguardService
+    AuthguardService,
+    AdminAuthguardService
   ],
   bootstrap: [AppComponent]
 })

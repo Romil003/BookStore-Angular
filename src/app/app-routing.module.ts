@@ -8,6 +8,9 @@ import { ViewBookComponent } from './component/view-book/view-book.component';
 import { CartComponent } from './component/cart/cart.component';
 import { OrderplaceComponent } from './component/orderplace/orderplace.component';
 import { WishlistComponent } from './component/wishlist/wishlist.component';
+import { AdminboardComponent } from './component/adminboard/adminboard.component';
+import { AdminguardGuard } from './Admingaurd/adminguard.guard';
+import { GetAllAdminBooksComponent } from './component/get-admin-books/get-all-admin-books/get-all-admin-books.component';
 
 const routes: Routes = [
   {path:'',pathMatch:'full',redirectTo:'login'},
@@ -24,6 +27,13 @@ const routes: Routes = [
 
   ]
 
+},
+  {path:'admindashboard',component:AdminboardComponent,canActivate:[AdminguardGuard] ,
+
+  children : [
+
+    {path:'',component:GetAllAdminBooksComponent}
+  ]
 }
 ];
 

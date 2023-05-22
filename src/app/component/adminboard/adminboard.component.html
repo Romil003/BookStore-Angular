@@ -1,0 +1,37 @@
+<div class="whole-container">
+    <div>
+        <mat-toolbar class="header">
+            <div class="ico-1">
+                <img src="../../../assets/education (1).svg">
+            </div>
+            <span class="text-1">Bookstore</span>
+            <input type="search" placeholder="Search...." (keyup)="searchData($event)">
+            <div class="ico-2">
+                <img src="../../../assets/person_outline_white_24dp.svg" [matMenuTriggerFor]="beforeMenu">
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                    <span class="text-4">Hello Admin,</span>
+                    <div class="item-class">
+                        <img src="../../../assets/person_outline_black_18dp.svg">
+                        <span>Profile</span>
+                    </div>
+                    <div class="item-class">
+                        <img src="../../../assets/work_outline_black_18dp.svg">
+                        <span>Orders</span>
+                    </div>
+                    <div class="item-class">
+                        <img src="../../../assets/favorite_border_black_18dp.svg" routerLink="wishlist">
+                        <span routerLink="wishlist">Whishlist</span>
+                    </div>
+                    <div class="item-class">
+                        <button class="log-out-button" (click)="loggingOut()">Log Out</button>
+                    </div>
+                </mat-menu>
+                <span class="text-2">Admin</span>
+            </div>
+        </mat-toolbar>
+    </div>
+    <router-outlet></router-outlet>
+    <mat-toolbar class="footer">
+        <div class="footer-text">Copyright 2020,Bookstore Private Limited.All rights are reserved.</div>
+    </mat-toolbar>
+</div>

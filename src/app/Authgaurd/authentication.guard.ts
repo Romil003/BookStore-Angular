@@ -15,5 +15,7 @@ export class AuthenticationGuard implements CanActivate {
   }  
   return this.Authguardservice.gettoken(); 
   }
+
+ 
   
 }
