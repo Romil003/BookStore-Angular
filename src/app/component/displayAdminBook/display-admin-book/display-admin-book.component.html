@@ -1,21 +1,42 @@
 <div class="book-main-container">
-    <div class="book-show-container" *ngFor="let book of adminBooks | searching : searchbookArray">
-        <div class="book-and-button">
-            <div class="book-details">
-                <img src="../../../assets/Image 11.png" height="85px" width="65px">
-                <div class="book-info">
-                    <span class="book-name">{{book.bookName}}</span>
-                    <span class="author-name">{{book.author}}</span>
-                    <span class="quantity">Qty ({{book.quantity}})</span>
-                    <div class="price-info">
-                        <span class="discounted-price">Rs.{{book.discountPrice}}</span>
-                        <span class="actual-price">Rs.{{book.price}}</span>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <img src="../../../assets/delete_black_18dp.svg" (click)="removeBook(book._id)">
-            </div>
-        </div>
-    </div>
+    <table mat-table [dataSource]="adminBooks | searching : searchbookArray" class="mat-elevation-z8 demo-table">
+        
+        <ng-container matColumnDef="Image">
+          <th mat-header-cell *matHeaderCellDef  class="column-name">Image</th>
+          <td mat-cell *matCellDef="let element"><img src="../../../assets/Image 11.png" height="85px" width="65px"></td>
+        </ng-container>
+
+        <ng-container matColumnDef="bookName">
+          <th mat-header-cell *matHeaderCellDef class="column-name">Book Name</th>
+          <td mat-cell *matCellDef="let book" class="book-name">{{book.bookName}}</td>
+        </ng-container>
+      
+        <ng-container matColumnDef="author">
+          <th mat-header-cell *matHeaderCellDef class="column-name">Author</th>
+          <td mat-cell *matCellDef="let book" class="author-name">{{book.author}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef class="column-name">Quantity</th>
+            <td mat-cell *matCellDef="let book" class="quantity">{{book.quantity}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef class="column-name">Price</th>
+          <td mat-cell *matCellDef="let book" class="actual-price">Rs.{{book.price}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="discountedPrice">
+            <th mat-header-cell *matHeaderCellDef class="column-name">Discounted Price</th>
+            <td mat-cell *matCellDef="let book" class="discounted-price">Rs.{{book.discountPrice}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Action">
+            <th mat-header-cell *matHeaderCellDef class="column-name">Action</th>
+            <td mat-cell *matCellDef="let book" ><img src="../../../../assets/delete_black_18dp new.svg" (click)="removeBook(book._id)"><img src="../../../../assets/edit_black_18dp new.svg" (click)="updateBook(book,book._id)"></td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
 </div>

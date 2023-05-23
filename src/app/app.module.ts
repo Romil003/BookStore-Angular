@@ -8,7 +8,7 @@ import { LoginComponent } from './component/login/login.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatFormFieldControl, MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
@@ -36,6 +36,10 @@ import { AdminboardComponent } from './component/adminboard/adminboard.component
 import { AdminAuthguardService } from './Service/AdminGuardService/admin-authguard.service';
 import { GetAllAdminBooksComponent } from './component/get-admin-books/get-all-admin-books/get-all-admin-books.component';
 import { DisplayAdminBookComponent } from './component/displayAdminBook/display-admin-book/display-admin-book.component';
+import {MatTableModule} from '@angular/material/table';
+import { BookDetailsComponent } from './component/book-details/book-details.component';
+import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,8 @@ import { DisplayAdminBookComponent } from './component/displayAdminBook/display-
     WishlistComponent,
     AdminboardComponent,
     GetAllAdminBooksComponent,
-    DisplayAdminBookComponent
+    DisplayAdminBookComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +80,10 @@ import { DisplayAdminBookComponent } from './component/displayAdminBook/display-
     MatNativeDateModule,
     MatRadioModule,
     MatBadgeModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatTableModule,
+    MatDialogModule,
+    MatCheckboxModule
   ],
   providers: [
     AuthguardService,

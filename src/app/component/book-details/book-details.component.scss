@@ -1,0 +1,78 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    row-gap: 10px;
+}
+
+input {
+    height: 20px;
+    width: 120px;
+}
+
+.form-content {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.add-book-button {
+    margin-left: 370px;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 100px;
+    background-color:#A03037 ;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+::ng-deep.mdc-dialog__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 500px;
+    height: auto;
+    transform: scale(0.8);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.mat-mdc-dialog-content {
+    // height: 600px;
+    /* width: 800px; */
+    max-height: none !important;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+    width: 450px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.describe {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.description {
+    height: 100px;
+    width: 450px;
+}
+
+::ng-deep.mdc-dialog__title+.mdc-dialog__content, .mdc-dialog__header+.mdc-dialog__content {
+    padding-top: 10px;
+}

@@ -38,10 +38,12 @@
 }
 
 .add-button{
-
     cursor: pointer;
-    width: 100px;
-    height: 30px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     font-size: 18px;
     line-height: 24px;
     font-family: Roboto;

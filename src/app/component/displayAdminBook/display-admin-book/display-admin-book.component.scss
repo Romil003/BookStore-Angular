@@ -49,63 +49,95 @@
     column-gap: 10px;
 }
 
-.book-name {
-    font-size:18px ;
-    line-height: 24px;
-    font-family: Roboto;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-letter-spacing: 0px;
-color: #0A0102;
-opacity: 1;
-}
-
-.author-name {
-    font-size:12px ;
+.column-name {
+    font-size: 18px;
     line-height: 16px;
     font-family: Roboto;
     font-style: normal;
     font-variant: normal;
-    font-weight: normal;
+    font-weight: 400;
     letter-spacing: 0px;
-    color: #9D9D9D;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.book-name {
+    font-size: 16px;
+    line-height: 16px;
+    font-family: Roboto;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.author-name {
+    font-size: 16px;
+    line-height: 16px;
+    font-family: Roboto;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: #0A0102;
     opacity: 1;
 }
 
 .discounted-price {
-    font-size:15px ;
+    font-size: 16px;
     line-height: 20px;
     font-family: Roboto;
     font-style: normal;
     font-variant: normal;
-    font-weight: bold;
+    font-weight: 500;
     letter-spacing: 0px;
     color: #0A0102;
     opacity: 1;
 }
 
 .actual-price {
-    font-size:12px ;
+    font-size: 16px;
     line-height: 16px;
     font-family: Roboto;
     font-style: normal;
     font-variant: normal;
-    font-weight: normal;
-    text-decoration: line-through;
+    font-weight: 500;
+    // text-decoration: line-through;
     letter-spacing: 0px;
     color: #9D9D9D;
     opacity: 1;
 }
 
 .quantity {
-    font-size:14px ;
+    font-size: 16px;
     line-height: 16px;
     font-family: Roboto;
     font-style: normal;
     font-variant: normal;
-    font-weight: normal;
+    font-weight: 500;
     letter-spacing: 0px;
     color: #0A0102;
     opacity: 1;
+}
+
+.demo-table {
+    width: 100%;
+}
+
+.demo-button-container {
+    padding-bottom: 16px;
+}
+
+.demo-button+.demo-button {
+    margin-left: 8px;
+}
+
+::ng-deep.mat-mdc-table .mdc-data-table__row {
+    height: 150px;
+}
+
+::ng-deep.mat-mdc-table .mdc-data-table__header-row {
+    height: 70px;
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/Service/Book/book.service';
+import { BookDetailsComponent } from '../../book-details/book-details.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-get-all-admin-books',
@@ -9,7 +11,8 @@ import { BookService } from 'src/app/Service/Book/book.service';
 export class GetAllAdminBooksComponent implements OnInit {
 
   books=[];
-  constructor(private bookService : BookService ){}
+  formData : any;
+  constructor(private bookService : BookService,public dialog: MatDialog ){}
   ngOnInit() {
     this.getAllBooks();
   }
@@ -22,6 +25,20 @@ export class GetAllAdminBooksComponent implements OnInit {
       console.log(this.books);
       
     })
+  }
+
+  openDialog(data? : any): void {
+    const dialogRef = this.dialog.open(BookDetailsComponent, {
+      data : this.formData ,
+    });
+
+    dialogRef.afterClosed().subscribe((result : any) => {
+      if (result) {
+        console.log('Form Data:', result);
+       this.formData = result;
+       
+      }
+    });
   }
 
 }

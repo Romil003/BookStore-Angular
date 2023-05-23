@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup
   signupForm!: FormGroup
   backgroundChange: boolean = false
-  isChecked: boolean = true;
+  isChecked: boolean = false;
   
   person: string = "Admin";
 
@@ -47,20 +47,20 @@ export class LoginComponent implements OnInit {
 
   changePerson() {
     this.isChecked = !this.isChecked;
-    if (!this.isChecked) {
-      this.person = "Admin"
+    if (this.isChecked) {
+      this.person = "User"
       console.log("person is Admin");
       
     }
     else {
-      this.person = "User";
+      this.person = "Admin";
       console.log("person is User");
     }
   }
 
 
   logIn() {
-    if (this.person === "User") {
+    if (this.person === "Admin") {
       if (this.loginForm.valid) {
         let reqData = {
           email: this.loginForm.value.email,
@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
           this.route.navigateByUrl('/dashboard');
         })
       }
-    } else if (this.person === "Admin") {
+    } else if (this.person === "User") {
       if (this.loginForm.valid) {
         let reqData = {
           email: this.loginForm.value.email,
