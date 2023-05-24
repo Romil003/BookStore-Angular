@@ -22,18 +22,29 @@ export class BookDetailsComponent implements OnInit {
     @Inject (MAT_DIALOG_DATA) public data: any
   ) {
     this.form = this.formBuilder.group({
-      bookName: data ? data.bookName : '',
-      author: data ? data.author : '',
-      quantity: data ? data.quantity : '',
-      price: data ? data.price : '',
-      discountedPrice: data ? data.discountPrice : '',
-      description : data ? data.description : ''
+      bookName: ['',[Validators.required]],
+      author: ['',[Validators.required]],
+      quantity: ['',[Validators.required]],
+      price: ['',[Validators.required]],
+      discountedPrice: ['',[Validators.required]],
+      description : ['',[Validators.required]]
     });
+    if(data){
+      this.form.patchValue({
+        bookName:  this.data.bookName ,
+        author: this.data.author ,
+        quantity: this.data.quantity ,
+        price: this.data.price,
+        discountedPrice: this.data.discountPrice,
+        description : this.data.description
+      })
+    }
+
 
     this.bookId = data ? data._id : '';
   }
   ngOnInit() {
-    
+
   }
 
   onSubmit(): void {
@@ -47,20 +58,18 @@ export class BookDetailsComponent implements OnInit {
       price: this.form.value.price,
       discountPrice: this.form.value.discountedPrice
     }
-    if(this.bookId === ''){
-      if (this.form.valid) {
+    if (this.form.valid) {
+      if(this.bookId === ''){
           this.adminBookService.addNewBookByAdmin(reqData).subscribe((result : any) => {
             console.log(result);
           })
         this.dialogRef.close(this.form.value);
       }
-    }
-    else {
-      if (this.form.valid) {
-          this.adminBookService.updateBookByAdmin(reqData,this.bookId).subscribe((result : any) => {
-            console.log(result);
-          })
-        this.dialogRef.close(this.form.value);
+      else {
+        this.adminBookService.updateBookByAdmin(reqData,this.bookId).subscribe((result : any) => {
+          console.log(result);
+        })
+      this.dialogRef.close(this.form.value);
       }
     }
 

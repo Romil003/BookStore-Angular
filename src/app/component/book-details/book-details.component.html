@@ -33,5 +33,5 @@
   </form>
 </div>
 <div mat-dialog-actions>
-  <button mat-raised-button class="add-book-button" (click)="onSubmit()" class="add-book-button">Submit</button>
+  <button mat-raised-button class="add-book-button" (click)="onSubmit()" class="add-book-button">{{bookId ? 'Update' : 'Add'}}</button>
 </div>

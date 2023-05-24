@@ -1,7 +1,7 @@
 .main-header {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    
     justify-content: center;
     align-items: center;
 }
@@ -12,6 +12,12 @@
     width: 1015px;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.book-count {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
 }
 
 .text-5 {
@@ -34,4 +40,82 @@ background: #FFFFFF 0% 0% no-repeat padding-box;
 border: 1px solid #E2E2E2;
 border-radius: 1px;
 opacity: 1;
+}
+
+@media screen and (max-width : 600px) {
+    .main-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    .header-2 {
+        padding-top: 23px;
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .text-5 {
+        font-size: 20px;
+        line-height: 33px;
+        font-weight: 500;
+    }
+
+    .text-6 {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 200;
+    }
+
+    .sorting {
+        height: 25px;
+        width: 130px;
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 1px;
+    opacity: 1;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    .main-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    .header-2 {
+        padding-top: 23px;
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .text-5 {
+        font-size: 20px;
+        line-height: 33px;
+        font-weight: 500;
+    }
+
+    .text-6 {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 200;
+    }
+
+    .sorting {
+        height: 25px;
+        width: 130px;
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 1px;
+    opacity: 1;
+    }
 }

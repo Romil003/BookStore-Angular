@@ -125,3 +125,53 @@
     color: #878787;
     opacity: 1;
 }
+
+@media screen and (max-width : 600px) {
+
+    .ManyCards {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-bottom: 50px;
+        margin-left: 70px;
+    }
+
+    .card-container {
+        width: 135px;
+        height: 275px;
+        display: flex;
+        border: 1px solid #E2E2E2;
+        flex-direction: column;
+        margin-right: 27px;
+        margin-bottom: 20px;
+    }
+
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+
+    .ManyCards {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-bottom: 50px;
+        margin-left: 100px;
+    }
+
+    .card-container {
+        width: 180px;
+        height: 275px;
+        display: flex;
+        border: 1px solid #E2E2E2;
+        flex-direction: column;
+        margin-right: 27px;
+        margin-bottom: 20px;
+    }
+}

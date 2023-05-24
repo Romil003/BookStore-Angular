@@ -24,7 +24,7 @@
                                     <mat-hint class="arrange-hint"><button mat-button color="primary"
                                             class="password-hint-button">Forgot password ?</button></mat-hint>
                                 </mat-form-field>
-                                <div>
+                                <div class="switch-container">
                                     <mat-slide-toggle name="checked" formControlName="isChecked" (toggleChange)="changePerson()">Switch To: {{person}}</mat-slide-toggle>
                                 </div>
                                 <button mat-raised-button class="Log-in-button" (click)="logIn()">Login</button>

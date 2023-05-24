@@ -132,7 +132,12 @@
 }
 
 .password-hint-button {
-    font-family: normal normal normal 10px/13px Roboto;
+    font-size: 10px;
+    line-height: 13px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-family:  Roboto;
     letter-spacing: 0px;
     border: none;
     outline: none;
@@ -237,4 +242,332 @@
 
 .switch-button {
     margin-top: -20px;
+}
+
+/* Media queries */
+@media screen and (max-width : 600px) {
+    .big-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height:100%;
+    }
+
+    .container {
+        margin-top: 30px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 224px;
+        height: 491px;
+        position: absolute;
+    }
+
+    .container img {
+        width: 145px;
+        height: 145px;
+        opacity: 1;
+        padding-top: 10px;
+        padding-left: 40px;
+    }
+
+    .text-1 {
+        text-align: center;
+        letter-spacing: 0px;
+        color: #0A0102;
+        opacity: 1;
+        padding-left: 31px;
+    }
+
+    .container-1 {
+        row-gap: 11px;
+    }
+
+    .card-container {
+        width: 289px;
+        height: 400px;
+        /* UI Properties */
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 5px 15px #00000029;
+        border: 1px solid #E4E4E4;
+        border-radius: 6px;
+        opacity: 1;
+        position: relative;
+        z-index: 1;
+        margin-left: 0px;
+        margin-top: 220px;
+    }
+
+    ::ng-deep.mat-mdc-text-field-wrapper {
+        width: 170px !important;
+        height: 40px !important;
+    }
+
+    .arrange-hint {
+        margin-left: 80px;
+    }
+
+    .password-hint-button {
+        font-size: 9px;
+        line-height: 10px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        font-family:  Roboto;
+        letter-spacing: 0px;
+        border: none;
+        outline: none;
+        background-color: #fff;
+        color: #9D9D9D;
+        opacity: 1;
+    }
+
+
+    .Log-in-button {
+        height: 27px;
+        width: 172px;
+        text-align: center;
+        background: #A03037 0% 0% no-repeat padding-box;
+        border-radius: 3px;
+        color: #fff;
+        border: thin;
+    }
+
+    .or-class {
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .line {
+        width: 80px;
+    }
+    
+    .text-3 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .arrange-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 5px;
+    }
+
+    .facebook-button {
+        height: 27px;
+        width: 172px;
+        background: #4266B2 0% 0% no-repeat padding-box;
+        border-radius: 3px;
+        color: #fff;
+        border: thin;
+        margin-right: 0px;
+    }
+    
+    .button-2 {
+        height: 27px;
+        width: 172px;
+        background: #F5F5F5 0% 0% no-repeat padding-box;
+        border-radius: 3px;
+        color: #0d0d0d;
+        border: thin;
+    }
+
+    ::ng-deep.mat-mdc-tab.mdc-tab {
+        height: 28px !important;
+        flex-grow: 0;
+    }
+
+    .log-in-container {
+        width: 252px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 5px;
+    }
+
+    .log-in-container-1 {
+        width: 252px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 2px;
+    }
+
+    ::ng-deep .mdc-tab {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-family: var(--mdc-typography-button-font-family, var(--mdc-typography-font-family, Roboto));
+        font-size: var(--mdc-typography-button-font-size, 14px);
+        line-height: var(--mdc-typography-button-line-height, 36px);
+        font-weight: var(--mdc-typography-button-font-weight, 550);
+        letter-spacing: var(--mdc-typography-button-letter-spacing, 0px);
+        -webkit-text-decoration: var(--mdc-typography-button-text-decoration, none);
+        text-decoration: var(--mdc-typography-button-text-decoration, none);
+        text-transform: var(--mdc-typography-button-text-transform, none);
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    .big-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height:100%;
+    }
+
+    .container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 324px;
+        height: 350px;
+        position: absolute;
+        margin-right: 150px;
+    }
+
+    .container img {
+        width: 210px;
+        height: 220px;
+        padding-top: 22px;
+        opacity: 1;
+        padding-left: 12px;
+    }
+
+    .text-1 {
+        width: 150px;
+        height: 100px;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: 0px;
+        color: #0A0102;
+        opacity: 1;
+        padding-top: 15px;
+        padding-left: 51px;
+    }
+
+    .card-container {
+        width: 280px;
+        height: 400px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1607843137);
+        border: 1px solid #E4E4E4;
+        border-radius: 6px;
+        opacity: 1;
+        position: relative;
+        z-index: 1;
+        margin-left: 250px;
+    }
+
+    .log-in-container {
+        width: 200px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        row-gap: 5px;
+    }
+
+    ::ng-deep.mat-mdc-tab.mdc-tab {
+        height: 28px !important;
+        flex-grow: 0;
+    }
+
+    ::ng-deep.mdc-tab {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-family: var(--mdc-typography-button-font-family, var(--mdc-typography-font-family, Roboto));
+        font-size: var(--mdc-typography-button-font-size, 14px);
+        line-height: var(--mdc-typography-button-line-height, 36px);
+        font-weight: var(--mdc-typography-button-font-weight, 550);
+        letter-spacing: var(--mdc-typography-button-letter-spacing, 0px);
+        -webkit-text-decoration: var(--mdc-typography-button-text-decoration, none);
+        text-decoration: var(--mdc-typography-button-text-decoration, none);
+        text-transform: var(--mdc-typography-button-text-transform, none);
+    }
+
+    ::ng-deep.mat-mdc-text-field-wrapper {
+        width: 200px !important;
+        height: 40px !important;
+    }
+
+    .password-hint-button {
+        font-size: 10px;
+        line-height: 10px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        font-family: Roboto;
+        letter-spacing: 0px;
+        border: none;
+        outline: none;
+        background-color: #fff;
+        color: #9D9D9D;
+        opacity: 1;
+    }
+
+    .arrange-hint {
+        margin-left: 105px;
+    }
+
+    .Log-in-button {
+        height: 20px;
+        width: 200px;
+        text-align: center;
+        background: #A03037 0% 0% no-repeat padding-box;
+        border-radius: 3px;
+        color: #fff;
+        border: thin;
+    }
+
+    .arrange-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 5px;
+    }
+
+    .facebook-button {
+        height: 20px;
+        width: 200px;
+        background: #4266B2 0% 0% no-repeat padding-box;
+        border-radius: 3px;
+        color: #fff;
+        border: thin;
+        margin-right: 0px;
+    }
+    
+    .button-2 {
+        height: 20px;
+        width: 200px;
+        background: #F5F5F5 0% 0% no-repeat padding-box;
+        border-radius: 3px;
+        color: #0d0d0d;
+        border: thin;
+    }
+
+    .log-in-container-1 {
+        width: 200px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        row-gap: 2px;
+    }
 }
