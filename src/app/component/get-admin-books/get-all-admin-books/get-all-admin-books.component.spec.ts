@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GetAllAdminBooksComponent } from './get-all-admin-books.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DisplayAdminBookComponent } from '../../displayAdminBook/display-admin-book/display-admin-book.component';
+import { SearchingPipe } from 'src/app/Pipe/searchPipe/searching.pipe';
 
 describe('GetAllAdminBooksComponent', () => {
   let component: GetAllAdminBooksComponent;
@@ -8,7 +12,8 @@ describe('GetAllAdminBooksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GetAllAdminBooksComponent ]
+      imports : [HttpClientModule,MatDialogModule],
+      declarations: [ GetAllAdminBooksComponent ,DisplayAdminBookComponent ,SearchingPipe]
     })
     .compileComponents();
 

@@ -38,8 +38,9 @@ import { GetAllAdminBooksComponent } from './component/get-admin-books/get-all-a
 import { DisplayAdminBookComponent } from './component/displayAdminBook/display-admin-book/display-admin-book.component';
 import {MatTableModule} from '@angular/material/table';
 import { BookDetailsComponent } from './component/book-details/book-details.component';
-import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import {MatDialogModule,MatDialogRef} from '@angular/material/dialog';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { UserService } from './Service/UserService/user.service';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
   ],
   providers: [
     AuthguardService,
-    AdminAuthguardService
+    AdminAuthguardService,
+    UserService,
+    MatDialogRef
   ],
   bootstrap: [AppComponent]
 })

@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/Service/CartService/cart.service';
 import { DataService } from 'src/app/Service/Data/data.service';
 import { FeedbackService } from 'src/app/Service/FeedbackService/feedback.service';
 import { WishlistService } from 'src/app/Service/WishlistService/wishlist.service';
 
+
 @Component({
   selector: 'app-view-book',
   templateUrl: './view-book.component.html',
   styleUrls: ['./view-book.component.scss']
 })
+
+
 export class ViewBookComponent implements OnInit {
 
   getBookData : any;
@@ -25,7 +29,7 @@ export class ViewBookComponent implements OnInit {
   starRatingValue : any;
   singleRating = [];
   ratingArray : any  = [];
-  constructor(private route : Router,private dataService : DataService,
+  constructor(private dataService : DataService,
     private cartService : CartService,private feedbackService : FeedbackService,
     private wishlistService : WishlistService){
 

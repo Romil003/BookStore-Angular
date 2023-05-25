@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DisplayAdminBookComponent } from './display-admin-book.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { SearchingPipe } from 'src/app/Pipe/searchPipe/searching.pipe';
+import { DataSource } from '@angular/cdk/collections';
 
 describe('DisplayAdminBookComponent', () => {
   let component: DisplayAdminBookComponent;
@@ -8,7 +12,9 @@ describe('DisplayAdminBookComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DisplayAdminBookComponent ]
+      imports : [HttpClientModule,MatDialogModule],
+      declarations: [ DisplayAdminBookComponent,SearchingPipe ],
+      providers : [DataSource]
     })
     .compileComponents();
 

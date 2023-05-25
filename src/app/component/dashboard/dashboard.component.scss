@@ -214,13 +214,14 @@ input[type="search"]::placeholder {
     }
 
     .header {
+        width: 100%;
         background-color: #A03037;
         height: 50px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
-        width: 100%;
+        
     }
 
     .ico-1 {
@@ -276,7 +277,7 @@ input[type="search"]::placeholder {
     }
 
     .footer {
-        // width: auto !important;
+         width: 100% !important;
         height: 50px !important;
         color: #fff;
         /* UI Properties */
