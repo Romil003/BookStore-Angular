@@ -16,7 +16,8 @@ export class LoginComponent implements OnInit {
   signupForm!: FormGroup
   backgroundChange: boolean = false
   isChecked: boolean = false;
-  
+  passwordVisible:boolean = false;
+  showEye : boolean = false
   person: string = "Admin";
 
   constructor(private formbuilder: FormBuilder,
@@ -43,6 +44,11 @@ export class LoginComponent implements OnInit {
 
   onBGChange() {
     this.backgroundChange = !this.backgroundChange;
+  }
+
+  passwordVisiblity(){
+    this.passwordVisible = !this.passwordVisible;
+    this.showEye= !this.showEye;
   }
 
   changePerson() {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/Service/Data/data.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { DataService } from 'src/app/Service/Data/data.service';
 export class OrderplaceComponent implements OnInit {
 
   orderPlacedId : any;
-  constructor( private dataService : DataService){
+  constructor( private dataService : DataService,private route : Router){
     
   }
   ngOnInit() {
@@ -18,5 +19,9 @@ export class OrderplaceComponent implements OnInit {
       this.orderPlacedId = result
     })
     
+  }
+
+  goToShoppingPage(){
+    this.route.navigateByUrl('/dashboard');
   }
 }

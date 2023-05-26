@@ -5,11 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchingPipe implements PipeTransform {
 
-  transform(value: any[], args: any){
+  transform(value: [], args: any){
     if(!args){
       return value;
     } 
-    return value.filter((result : any) => {
+    return value?.filter((result : any) => {
       return result.bookName.toLowerCase().includes(args) || result.author.toLowerCase().includes(args);
     })
   }

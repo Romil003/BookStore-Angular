@@ -12,7 +12,7 @@ export class DisplayBooksComponent implements OnInit {
   @Input() getBooksArray : any
   gettingArray : any
   sortingOfBooks : any
-
+  page : any
   
   constructor(private dataService : DataService , private route : Router){}
   ngOnInit(){

@@ -18,9 +18,11 @@
                                 </mat-form-field>
                                 <mat-form-field appearance="outline">
                                     <mat-label>Password</mat-label>
-                                    <input matInput type="password" formControlName="password" placeholder="password" name="password">
-                                    <mat-icon matSuffix class="suffix-img"><img
-                                            src="../../../assets/visibility_black_24dp.svg"></mat-icon>
+                                    <input matInput [type]="passwordVisible ? 'text' : 'password'" formControlName="password" placeholder="password" name="password">
+                                    <mat-icon matSuffix class="suffix-img" *ngIf="showEye" ><img
+                                            src="../../../assets/visibility_black_18dp.svg" (click)="passwordVisiblity()"></mat-icon>
+                                    <mat-icon matSuffix class="suffix-img" *ngIf="!showEye"><img
+                                            src="../../../assets/visibility_off_black_18dp.svg" (click)="passwordVisiblity()"></mat-icon>
                                     <mat-hint class="arrange-hint"><button mat-button color="primary"
                                             class="password-hint-button">Forgot password ?</button></mat-hint>
                                 </mat-form-field>

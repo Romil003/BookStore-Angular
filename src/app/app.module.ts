@@ -41,6 +41,8 @@ import { BookDetailsComponent } from './component/book-details/book-details.comp
 import {MatDialogModule,MatDialogRef} from '@angular/material/dialog';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { UserService } from './Service/UserService/user.service';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -84,13 +86,18 @@ import { UserService } from './Service/UserService/user.service';
     MatSlideToggleModule,
     MatTableModule,
     MatDialogModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatPaginatorModule,
+    NgxPaginationModule
   ],
   providers: [
     AuthguardService,
     AdminAuthguardService,
     UserService,
-    MatDialogRef
+    { 
+      provide: MatDialogRef,
+      useValue: []
+       }
   ],
   bootstrap: [AppComponent]
 })

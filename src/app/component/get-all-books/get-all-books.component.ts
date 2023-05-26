@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { BookService } from 'src/app/Service/Book/book.service';
 import { DataService } from 'src/app/Service/Data/data.service';
+import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+
 
 @Component({
   selector: 'app-get-all-books',
@@ -22,7 +25,7 @@ export class GetAllBooksComponent implements OnInit {
   ngOnInit(){
 
     this.gettingAllBooks();
-      
+    
   }
 
   gettingAllBooks(){
@@ -32,13 +35,12 @@ export class GetAllBooksComponent implements OnInit {
       
       this.bookArray = response.result;
       console.log(this.bookArray);
-      
+     
     })
   }
 
   sorting(event : any){
     this.datService.sendingSortedValue(event.target.value);
   }
-
 
 }

@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DisplayAdminBookComponent } from '../../displayAdminBook/display-admin-book/display-admin-book.component';
 import { SearchingPipe } from 'src/app/Pipe/searchPipe/searching.pipe';
+import { DataSource } from '@angular/cdk/table';
+import { MatTableModule } from '@angular/material/table';
 
 describe('GetAllAdminBooksComponent', () => {
   let component: GetAllAdminBooksComponent;
@@ -12,7 +14,7 @@ describe('GetAllAdminBooksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports : [HttpClientModule,MatDialogModule],
+      imports : [HttpClientModule,MatDialogModule,MatTableModule],
       declarations: [ GetAllAdminBooksComponent ,DisplayAdminBookComponent ,SearchingPipe]
     })
     .compileComponents();

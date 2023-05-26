@@ -8,8 +8,10 @@ import { MatTabGroup, MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDividerModule } from '@angular/material/divider';
-import { FormGroup, FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -20,7 +22,8 @@ describe('LoginComponent', () => {
       imports : [HttpClientModule,MatSnackBarModule
         ,MatCardModule,MatTabsModule,
         MatFormFieldModule,MatSlideToggleModule,
-      MatDividerModule,FormsModule,CommonModule],
+      MatDividerModule,FormsModule,ReactiveFormsModule,
+      MatInputModule,BrowserAnimationsModule],
       declarations: [ LoginComponent ]
     })
     .compileComponents();
@@ -33,4 +36,8 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should initialize with default values',() => {
+    expect(component.isChecked).toBe(false);
+  })
 });
